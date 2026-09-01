@@ -25,16 +25,16 @@ MECATHERMO Ma0 - Dossier de revision
   07-ex-supplementaires.pdf    Le document officiel "Exercices supplementaires"
                                de la prof, explique pas a pas (cycle bonus,
                                moteur essence, frigo NH3) avec renvois vers les
-                               captures d ecran originales dans 2_casio/exos_suppl_*
+                               fiches calculatrice E01-E12 et L01-L02 (2_casio/images/)
   08-fiches-scripts.pdf        Pour MOTEUR.py (essence) et PAC.py (frigo) + lire
                                le diagramme log p-h : a chaque question posee par
                                le script, la formule qu il applique, et un encadre
                                "a ecrire sur la copie" (utile script OU main)
-  09-entrainement-exos-images.pdf  Les 3 exercices de 2_casio/exos_suppl_* repris
-                               en entier : chaque etape calculee avec la formule,
-                               le remplacement numerique ET un encadre "pourquoi
-                               cette formule" -- cachez la correction et refaites
-                               avant de comparer
+  09-entrainement-exos-images.pdf  Les 3 exercices officiels de la prof (memes
+                               que E01-E12/L01-L02) repris en entier : chaque
+                               etape calculee avec la formule, le remplacement
+                               numerique ET un encadre "pourquoi cette formule"
+                               -- cachez la correction et refaites avant de comparer
   tex/                         Sources LaTeX (recompilables, pdflatex 2 passes)
 
 2_casio/       Boite a outils calculatrice (voir son propre LISEZ-MOI)

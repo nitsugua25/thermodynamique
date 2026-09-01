@@ -18,9 +18,10 @@ scripts/   Les 7 scripts Python a copier A LA RACINE du disque CASIO
   THERM.py    echange thermique : Q=mcdT, chaleur latente, melange, debit
   FICHE.py    formulaire - 12 pages plein ecran, aucun calcul
 
-images/    79 fiches PNG 384x216 (taille exacte de l ecran), texte en
-           GRAS et grande taille. Une seule idee par fiche : mieux vaut
-           plus de fiches que du texte illisible.
+images/    81 fiches PNG 384x216 (taille exacte de l ecran), texte en
+           GRAS et grande taille, retape proprement (pas des captures
+           d ecran). Une seule idee par fiche : mieux vaut plus de fiches
+           que du texte illisible.
              D01..D23  DEMARCHE  - l ordre dans lequel rediger
              S01..S08  SCHEMA    - le dessin a savoir refaire de tete
              T01..T35  DEMONSTRATION - chaque demo du mail de la prof,
@@ -33,10 +34,17 @@ images/    79 fiches PNG 384x216 (taille exacte de l ecran), texte en
                        entierement traites avec les nombres :
                        cycle (E01-E03), moteur essence (E04-E08),
                        frigo/PAC (E09-E12)
+             L01..L02  LECTURE DIAGRAMME - placer les 4 points sur le
+                       diagramme log p-h et en tirer PSN / COP (le 4e
+                       type de competence qui peut tomber a l examen)
            A convertir en .g3p / .g3b avec fx-CG Manager pour les afficher
            sur la calculatrice. Le formulaire, lui, reste dans FICHE.py.
+           C est CE dossier qui sert de reference pour l examen : les
+           anciens exos_suppl_png/jpg (captures d ecran, illisibles une
+           fois reduites a 384x216) ont ete retires, remplaces par E01-E12
+           et L01-L02 ci-dessus (memes exercices officiels, retapes nets).
 
-images_jpeg/  Les memes 79 fiches en JPEG (qualite 95) pour un usage PC,
+images_jpeg/  Les memes 81 fiches en JPEG (qualite 95) pour un usage PC,
               impression ou insertion dans un document.
 
 synthese_png/   Captures d ecran DIRECTES de ta synthese manuscrite en
@@ -57,27 +65,13 @@ synthese_png/   Captures d ecran DIRECTES de ta synthese manuscrite en
                 que le PNG), le dossier entier tient largement en dessous
                 de 9,6 Mo de stockage calculatrice.
 
-exos_suppl_png/  Le document officiel "Exercices supplementaires" de la
-exos_suppl_jpg/  prof, capture directement (pas retape) : enonce, methode
-                 manuscrite, corrige officiel. Meme principe que ci-dessus :
-                 exos_suppl_png/ decoupe pour la calculatrice, exos_suppl_jpg/
-                 une image par page pour PC/tel.
-                   ES01  cycle a 4 transformations (bonus, meme categorie
-                         que les exos d examen)
-                   ES02  moteur essence 4 temps 4 cylindres
-                   ES03  frigo NH3 (diagramme officiel + variante avec
-                         surchauffe/sous-refroidissement)
-                 L exercice 1 du document original (turbine a double
-                 detente) n est pas repris ici : il ne peut pas tomber en
-                 exercice a l examen (voir 1_revision/06-exos-type-examen.pdf).
-                 Explications pas a pas : voir 1_revision/07-ex-supplementaires.pdf
-
 guide-casio.pdf      Installation, quel script pour quelle question, et
                      8 exercices de test avec les resultats attendus
-fiches-planches.pdf  Les 79 fiches EXPLIQUEES (40 p.) : chaque fiche
-                     avec ce qu elle montre et quand la sortir
+fiches-planches.pdf  Les fiches EXPLIQUEES (40 p.) : chaque fiche avec ce
+                     qu elle montre et quand la sortir
 
-tex/       Sources LaTeX + gen_fiches.py (regenere les 79 PNG)
+tex/       Sources LaTeX + gen_fiches.py (regenere les 81 PNG dans images/
+           et images_jpeg/ ; voir aussi crop_synthese.py pour synthese_*)
 
 PRINCIPE COMMUN A TOUS LES SCRIPTS
   EXE sans rien taper = "je n ai pas cette donnee" : le script saute la

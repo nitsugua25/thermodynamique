@@ -930,6 +930,33 @@ $c=4185$ J/kg$\cdot$K.}
 \ex{$\dot m_{eau}=\mathbf{0{,}573}$ kg/s $\approx 2{,}1$ m$^3$/h}
 """
 
+# ============  LECTURE DU DIAGRAMME log p-h  ============
+
+F["L01-diagramme-placer-points"] = r"""
+\titre{Lire log p-h (1/2) --- placer}
+\note{Axes : horizontal $=h$ (kJ/kg), vertical (log) $=p$ (bar).}
+\stp{1}{Pt 1 (\'evap.) : isobare $p_{\'evap}(T_{\'evap})$
+$\cap$ courbe vapeur satur\'ee (ou $+$loin si surchauffe)}
+\stp{2}{Pt 2 (compr.) : suivre l'\textbf{isentropique}
+depuis 1 jusqu'\`a $p_{cond}$}
+\stp{3}{Pt 3 (cond.) : isobare $p_{cond}$
+$\cap$ courbe liquide satur\'e (ou $-$loin si sous-refroid.)}
+\stp{4}{Pt 4 (d\'etente) : \textbf{verticale} depuis 3
+jusqu'\`a $p_{\'evap}$ \; $\Rightarrow h_4=h_3$}
+"""
+
+F["L02-diagramme-lire-psn"] = r"""
+\titre{Lire log p-h (2/2) --- calculer}
+\stp{1}{Projeter chaque point sur l'axe $h$ : lecture
+$h_1,h_2,h_3{=}h_4$ (kJ/kg)}
+\stp{2}{$w=h_2-h_1$ \quad (compresseur)}
+\stp{3}{$q_1=h_1-h_4$ \quad (\'evapo, effet utile FROID)}
+\stp{4}{$q_2=h_2-h_3$ \quad (conden., c\'ed\'e au CHAUD)}
+\stp{}{$\boxed{PSN=\dfrac{q_1}{w}}$ \quad
+$\boxed{COP_{PAC}=\dfrac{|q_2|}{w}=PSN{+}1}$}
+\ex{$h_1{=}1760,h_2{=}2050,h_3{=}700$ : $PSN{=}\mathbf{3{,}66}$ \scr{PAC}}
+"""
+
 
 # ------------------------------------------------------------------
 def build(name, body, pt=9):
