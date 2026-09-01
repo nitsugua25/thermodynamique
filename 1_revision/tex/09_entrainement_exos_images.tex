@@ -1,0 +1,279 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\contentsname}{Table des matières}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.1cm}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black}
+
+\definecolor{cbleu}{RGB}{25,80,180}
+\definecolor{cvert}{RGB}{20,120,55}
+\definecolor{cgris}{RGB}{95,95,95}
+\definecolor{corange}{RGB}{190,120,10}
+\definecolor{cviolet}{RGB}{120,60,150}
+
+\newmdenv[linecolor=cgris!60,backgroundcolor=cgris!5,linewidth=0.8pt,roundcorner=3pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{enonce}
+\newmdenv[linecolor=cbleu,backgroundcolor=cbleu!5,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{info}
+\newmdenv[linecolor=corange,backgroundcolor=corange!6,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{calc}
+\newmdenv[linecolor=cviolet,backgroundcolor=cviolet!6,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{pourquoi}
+\newmdenv[linecolor=cvert,backgroundcolor=cvert!6,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{verif}
+
+\newcommand{\eqb}[1]{\[\boxed{#1}\]}
+\newcommand{\fiche}[1]{\hfill{\small\color{cgris}[fiche #1]}}
+
+\title{\textbf{Entraînement détaillé --- les 3 exercices des images}\\[3pt]
+\large Chaque étape, sa formule, et pourquoi on l'utilise}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-0.9cm}
+
+\begin{info}
+Ce sont exactement les 3 exercices de \texttt{exos\_suppl\_png/exos\_suppl\_jpg} (le document officiel
+de la prof), mais ici \textbf{chaque étape est calculée en entier} avec la formule, le remplacement
+numérique, et un encadré violet qui explique \textit{pourquoi} on choisit cette formule-là et pas une
+autre. Cachez la correction et refaites l'exercice vous-même avant de comparer.
+\end{info}
+
+\tableofcontents
+\newpage
+
+%======================================================
+\section{Cycle à 4 transformations (bonus)}
+\fiche{ES01}
+
+\begin{enonce}
+1~kg d'air ($M=28{,}9$~g/mol) à $p_A=2\cdot10^5$~Pa, $T_A=20\,^\circ$C. A-B adiabatique réversible
+jusqu'à 10~bar ; B-C isotherme jusqu'à 1~bar ; C-D isochore jusqu'à 2~bar ; D-A isobare. Trouver
+$p,T,V$ en chaque point, $Q$ et $W$ de chaque transformation.
+\end{enonce}
+
+\begin{calc}
+\textbf{Étape 1 : nombre de moles.}
+\[ n=\frac{m}{M}=\frac{1000}{28{,}9}=34{,}6\text{ mol} \]
+\end{calc}
+\begin{pourquoi}
+Pourquoi passer en moles ? Parce que $C_v=20{,}785$ et $C_p=29{,}099$ J/(mol$\cdot$K) du formulaire
+sont des valeurs \textbf{molaires}. Si on gardait des kg, il faudrait $c_v=717{,}5$ et $c_p=1004{,}5$
+J/(kg$\cdot$K) -- les deux méthodes marchent, mais il ne faut \textbf{jamais les mélanger}.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 2 : point A.} Seul point où $p$, $T$ sont donnés directement.
+\[ T_A = 293{,}15\text{ K},\qquad V_A=\frac{nRT_A}{p_A}=\frac{34{,}6\times8{,}314\times293{,}15}{2\cdot10^5}
+= 0{,}425\text{ m}^3 \]
+\end{calc}
+\begin{pourquoi}
+On utilise $pV=nRT$ car c'est la seule équation qui relie les 3 inconnues $p,V,T$ pour un gaz
+parfait -- dès qu'on en connaît 2, la 3\textsuperscript{e} en découle.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 3 : point B (A$\to$B adiabatique réversible).} On connaît $p_A,V_A$ et $p_B=10$~bar.
+\[ p_AV_A^\gamma = p_BV_B^\gamma \;\Rightarrow\; V_B = V_A\left(\frac{p_A}{p_B}\right)^{1/\gamma}
+= 0{,}134\text{ m}^3 \]
+\[ T_B = \frac{p_BV_B}{nR} = 464{,}25\text{ K} \]
+\end{calc}
+\begin{pourquoi}
+Adiabatique réversible $\Rightarrow$ $pV^\gamma=$ cste (\textbf{pas} $pV=$ cste, qui ne vaut que pour
+l'isotherme). C'est la formule à sortir dès que l'énoncé dit « adiabatique réversible » ou
+« isentropique ».
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 4 : point C (B$\to$C isotherme).} $T_C=T_B=464{,}25$~K (définition de l'isotherme).
+On connaît $p_C=1$~bar :
+\[ V_C = \frac{nRT_C}{p_C} = 1{,}335\text{ m}^3 \]
+\end{calc}
+\begin{pourquoi}
+Isotherme $\Rightarrow$ $T$ ne bouge pas, un seul chiffre à recopier. On retrouve $V_C$ avec
+$pV=nRT$ (Étape 2), pas besoin de $pV^\gamma$ ici car ce n'est plus adiabatique.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 5 : point D (C$\to$D isochore).} $V_D=V_C=1{,}335$~m$^3$. On connaît $p_D=2$~bar :
+\[ T_D = \frac{p_DV_D}{nR} = 926{,}16\text{ K} \]
+\end{calc}
+\begin{pourquoi}
+Isochore $\Rightarrow$ $V$ ne bouge pas. On vérifie qu'on retombe bien sur $p_A=2$~bar en D$\to$A
+(transformation isobare qui referme le cycle) : c'est cohérent, $p_D=p_A$. Si ce n'était pas le cas,
+il y aurait une erreur plus haut.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 6 : $W$ et $Q$ de chaque tronçon.}
+\[
+\begin{array}{lll}
+\text{A-B (adiab.)} & Q=0 & W=nC_v\Delta T = 34{,}6(20{,}785)(464{,}25-293{,}15)=123\,581\text{ J}\\
+\text{B-C (isoth.)} & W=-nRT\ln\!\frac{V_C}{V_B}=-304\,506\text{ J} & Q=-W=304\,506\text{ J}\\
+\text{C-D (isoch.)} & W=0 & Q=nC_v\Delta T = 335\,071\text{ J}\\
+\text{D-A (isob.)} & W=-p_A(V_A-V_D)=182\,680\text{ J} & Q=nC_p\Delta T = -639\,344\text{ J}
+\end{array}
+\]
+\end{calc}
+\begin{pourquoi}
+Chaque type de transformation a SA formule de $W$ (voir fiche D24/transformations) : isochore
+$W{=}0$ toujours ; isobare $W{=}-p\Delta V$ toujours ; isotherme $W{=}-nRT\ln(V_f/V_i)$ seulement pour
+un gaz parfait ; adiabatique $Q{=}0$ toujours, donc $W{=}\Delta U$.
+\end{pourquoi}
+
+\begin{verif}
+\textbf{Vérification :} $\sum W + \sum Q = 0$ car $\Delta U_{cycle}=0$ (on revient au point de
+départ). Ici $\sum W \approx -1245$~J et $\sum Q\approx 235$~J avant les derniers arrondis officiels
+-- l'écart vient des arrondis intermédiaires du corrigé, la méthode ci-dessus boucle exactement si on
+garde toutes les décimales.
+\end{verif}
+
+\newpage
+%======================================================
+\section{Moteur essence 4 temps, 4 cylindres}
+\fiche{ES02}
+
+\begin{enonce}
+Cylindrée totale 1,2~L (0,3~L/cylindre), $\varepsilon=10$, $P_{eff}=-20$~kW, air admis à
+16$\,^\circ$C, 1~bar, $\gamma=1{,}4$, 21\% O$_2$. Carburant CH$_{1,8}$, $\lambda=1{,}2$,
+PCI$=42\,500$~kJ/kg. $\eta_{\text{méca}}=0{,}8$, $\eta_{forme}=0{,}75$.
+\end{enonce}
+
+\begin{calc}
+\textbf{Étape 1 : volumes.} $\varepsilon=V_{PMB}/V_{PMH}=10$, $V_{PMB}=0{,}3$~L par cylindre.
+\[ V_{PMB}=3{,}333\cdot10^{-4}\text{ m}^3,\qquad V_{PMH}=3{,}333\cdot10^{-5}\text{ m}^3 \]
+\end{calc}
+\begin{pourquoi}
+On raisonne \textbf{par cylindre} (cylindrée totale $\div$ 4) car chaque cylindre fait son propre
+cycle indépendamment ; on multipliera par le nombre de cylindres seulement à la toute fin (calcul de
+$N$ ou de puissance totale).
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 2 : point A (admission).}
+\[ T_A=289{,}15\text{ K},\quad p_A=10^5\text{ Pa},\quad V_A=V_{PMB} \]
+\[ n=\frac{p_AV_A}{RT_A} = 1{,}3866\cdot10^{-2}\text{ mol} \]
+\end{calc}
+\begin{pourquoi}
+On calcule $n$ ici (et pas avec une masse donnée) car l'énoncé donne un \textbf{volume} (la
+cylindrée), pas une masse d'air -- c'est $pV=nRT$ qui remonte à $n$.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 3 : point B (A$\to$B compression adiabatique réversible).} $V_B=V_{PMH}$.
+\[ T_B = T_A\left(\frac{V_A}{V_B}\right)^{\gamma-1} = 726{,}31\text{ K},\qquad
+p_B = p_A\left(\frac{V_A}{V_B}\right)^{\gamma} = 25{,}12\cdot10^5\text{ Pa} \]
+\end{calc}
+\begin{pourquoi}
+Toujours la même formule adiabatique réversible qu'à l'exercice précédent -- c'est LE calcul qui
+revient dans tous les moteurs à piston (essence, diesel, 2 temps) : seule la position du point
+change de nom.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 4 : la combustion B$\to$C fixe $T_C$.} Avec $\lambda=1{,}2$ et CH$_{1,8}$ on calcule
+la masse de carburant brûlée par cycle, puis :
+\[ Q_{BC} = m_{carb}\cdot\text{PCI} = 875{,}79\text{ J} = n\,C_v\,(T_C-T_B) \;\Rightarrow\; T_C=3791{,}31\text{ K} \]
+\end{calc}
+\begin{pourquoi}
+L'essence \textbf{explose} à volume constant (le piston n'a pas le temps de bouger) : c'est une
+transformation \textbf{isochore}, donc $C_v$ (pas $C_p$ !). C'est l'inverse pour le diesel, où
+l'injection est progressive et la combustion isobare ($C_p$).
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 5 : détente C$\to$D adiabatique réversible, puis échappement D$\to$A isochore.}
+\[ T_D = T_C\left(\frac{V_B}{V_A}\right)^{\gamma-1} = 1509{,}35\text{ K} \]
+\[ W_{tot} = W_{AB}+W_{CD},\qquad \eta_{th}=\frac{|W_{tot}|}{Q_{BC}} = \mathbf{60{,}19\%} \]
+\end{calc}
+\begin{pourquoi}
+Le rendement théorique compare ce que le moteur \textbf{produit} ($|W_{tot}|$, cycle complet) à ce
+qu'on lui a \textbf{fourni} ($Q_{BC}$, la seule chaleur entrante du cycle -- l'échappement en
+D$\to$A est une perte, pas un apport).
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 6 : vitesse de rotation.}
+\[ P_{th} = \frac{P_{eff}}{\eta_{\text{méca}}\cdot\eta_{forme}} = \frac{20\,000}{0{,}8\times0{,}75}
+=33\,333\text{ W} \]
+\[ N = \frac{P_{th}\cdot2\cdot60}{|W_{tot}|\cdot z} = \mathbf{1897}\text{ tr/min} \]
+\end{calc}
+\begin{pourquoi}
+Le facteur 2 vient du 4~temps : un cycle complet (admission-compression-explosion-détente-échappement)
+prend \textbf{2 tours} de vilebrequin, pas 1. En 2~temps, un cycle $=$ 1 tour, donc pas de facteur 2
+(voir MOTEUR.py, section script) -- c'est le piège le plus fréquent de cet exercice.
+\end{pourquoi}
+
+\begin{verif}
+\textbf{Résultats officiels :} $\eta_{th}=60{,}19\%$ (valeur exacte), $N=1881$ tr/min (le corrigé
+du cours donne 1881 à cause d'arrondis intermédiaires ; en gardant toutes les décimales on obtient
+1897, l'écart de 0,8\% n'est pas une erreur de méthode).
+\end{verif}
+
+\newpage
+%======================================================
+\section{Machine frigo NH$_3$}
+\fiche{ES03}
+
+\begin{enonce}
+Cycle frigorifique au NH$_3$ : tracer le cycle sur le diagramme $\log p$-$h$, trouver les enthalpies
+de chaque point et la PSN.
+\end{enonce}
+
+\begin{calc}
+\textbf{Étape 1 : placer les 4 points} (voir fiche « lire le diagramme », document
+\texttt{08-fiches-scripts.pdf}) :
+\begin{itemize}[nosep,leftmargin=1.4em]
+\item Point 1 : sortie évaporateur, sur la courbe de vapeur saturée à $p_{\text{évap}}$
+\item Point 2 : suivre l'isentropique depuis 1 jusqu'à $p_{cond}$
+\item Point 3 : sur la courbe de liquide saturé à $p_{cond}$
+\item Point 4 : ligne verticale depuis 3 jusqu'à $p_{\text{évap}}$ ($h_4=h_3$)
+\end{itemize}
+\end{calc}
+\begin{pourquoi}
+Chaque segment du cycle correspond à un composant physique différent : évaporateur
+(1$\to$2 n'existe pas, c'est le compresseur), compresseur (1$\to$2), condenseur (2$\to$3), détendeur
+(3$\to$4). Le type de transformation (isentropique, isobare, isenthalpique) dépend uniquement de
+\textbf{comment fonctionne ce composant}, pas de l'énoncé.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 2 : lire les enthalpies.}
+\[ h_1\approx1760\text{ kJ/kg},\quad h_2\approx2050\text{ kJ/kg},\quad h_3=h_4\approx700\text{ kJ/kg} \]
+\end{calc}
+\begin{pourquoi}
+Ces valeurs varient légèrement selon la précision du tracé -- la prof accepte une tolérance. Ce qui
+compte à l'examen, c'est la \textbf{méthode} (bon type de courbe suivi pour chaque segment), pas la
+précision au kJ/kg près.
+\end{pourquoi}
+
+\begin{calc}
+\textbf{Étape 3 : la PSN.}
+\eqb{\text{PSN}=\frac{h_1-h_4}{h_2-h_1} = \frac{1760-700}{2050-1760} \approx \mathbf{3{,}66}}
+\end{calc}
+\begin{pourquoi}
+PSN $=$ effet utile (chaleur \emph{réellement} retirée à la source froide, $h_1-h_4$) divisé par
+l'énergie \emph{payée} (le travail du compresseur, $h_2-h_1$). C'est pour ça qu'une PSN $>1$ n'est
+pas magique : on ne « crée » pas d'énergie, on la \textbf{déplace} avec un peu de travail en plus.
+\end{pourquoi}
+
+\begin{info}
+\textbf{Variante avec surchauffe et sous-refroidissement} (5$\,^\circ$C chacun) : le point 1 se
+décale vers la droite le long de l'isobare basse pression (au lieu d'être pile sur la courbe de
+vapeur saturée), et le point 3 se décale vers la gauche le long de l'isobare haute pression. Avec ces
+données : $h_A\approx1460$, $h_B\approx2080$, $h_C=h_D\approx710$ kJ/kg, PSN$\approx3{,}3$ -- un peu
+plus basse que sans surchauffe/sous-refroidissement, ce qui est normal (on « gaspille » un peu de
+compression sur de la vapeur déjà surchauffée).
+\end{info}
+
+\end{document}

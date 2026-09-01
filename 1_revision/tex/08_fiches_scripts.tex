@@ -1,0 +1,242 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\contentsname}{Table des matières}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.1cm}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black}
+
+\definecolor{cbleu}{RGB}{25,80,180}
+\definecolor{cvert}{RGB}{20,120,55}
+\definecolor{cgris}{RGB}{95,95,95}
+\definecolor{crouge}{RGB}{170,40,40}
+\definecolor{corange}{RGB}{190,120,10}
+
+\newmdenv[linecolor=cgris!60,backgroundcolor=cgris!5,linewidth=0.8pt,roundcorner=3pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{enonce}
+\newmdenv[linecolor=cbleu,backgroundcolor=cbleu!5,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{info}
+\newmdenv[linecolor=corange,backgroundcolor=corange!6,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{step}
+\newmdenv[linecolor=cvert,backgroundcolor=cvert!6,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{ecrire}
+
+\newcommand{\eqb}[1]{\[\boxed{#1}\]}
+
+\title{\textbf{Fiches scripts --- que noter sur la copie}\\[3pt]
+\large MOTEUR.py (essence), PAC.py (frigo), lecture du diagramme}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-0.9cm}
+
+\begin{info}
+Le script donne des \textbf{nombres}. La prof veut voir la \textbf{formule} et le \textbf{calcul}. Ces
+fiches font le lien : pour chaque question posée par le script, la formule qu'il applique en interne,
+et un encadré vert \textit{« à écrire sur la copie »} qui montre exactement la ligne de rédaction
+attendue. Utile que vous ayez tapé les nombres dans le script \textbf{ou} que vous ayez tout fait à la
+main : la rédaction est la même.
+\end{info}
+
+\tableofcontents
+\newpage
+
+%======================================================
+\section{MOTEUR.py --- moteur essence 4 temps}
+
+\begin{enonce}
+\textbf{Exemple utilisé} (exercices supplémentaires officiels) : 4 temps, 4 cylindres, cylindrée
+totale 1,2~L, $\varepsilon=10$, $P_{eff}=-20$~kW, air admis à $16\,^\circ$C et 1~bar
+($\gamma=1{,}4$), carburant CH$_{1,8}$, $\lambda=1{,}2$, PCI$=42\,500$~kJ/kg,
+$\eta_{forme}=0{,}75$, $\eta_{\text{méca}}=0{,}8$.
+\end{enonce}
+
+\begin{step}
+\textbf{Le script demande : cylindrée, $\varepsilon$.} En interne il calcule $V_{PMB}$ (volume
+admission par cylindre) et $V_{PMH}=V_{PMB}/\varepsilon$.
+\[ V_{PMB}=\frac{1{,}2}{4}=0{,}3~\text{L} = 3{,}333\cdot10^{-4}\text{ m}^3,\qquad
+V_{PMH}=\frac{V_{PMB}}{\varepsilon}=3{,}333\cdot10^{-5}\text{ m}^3 \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « $V_A=V_{PMB}=3{,}333\cdot10^{-4}$ m$^3$ (admission), $V_B=V_{PMH}=3{,}333\cdot10^{-5}$
+m$^3$ (fin de compression), avec $\varepsilon=V_A/V_B$. »
+\end{ecrire}
+
+\begin{step}
+\textbf{Le script demande : $T_{adm}$, $p_{adm}$.} Point A connu directement (admission) :
+$T_A=289{,}15$ K, $p_A=10^5$ Pa. B$\to$C \textbf{compression adiabatique réversible}
+($\gamma=1{,}4$) :
+\[ p_C=p_B\left(\frac{V_B}{V_C}\right)^\gamma,\qquad T_C=T_B\left(\frac{V_B}{V_C}\right)^{\gamma-1} \]
+\[ p_C = 2{,}512\cdot10^6\text{ Pa},\qquad T_C = 726{,}31\text{ K} \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « A$\to$B compression adiabatique réversible : $p_BV_B^\gamma=p_AV_A^\gamma
+\Rightarrow p_B=\ldots$, puis $T_BV_B^{\gamma-1}=T_AV_A^{\gamma-1}\Rightarrow T_B=\ldots$ »
+(ici le script nomme le point après compression C, mais c'est le même calcul, seule la lettre change).
+\end{ecrire}
+
+\begin{step}
+\textbf{Le script demande : PCI, $x$, $y$ de C$_x$H$_y$, $\lambda$.} Il calcule la masse d'air
+admise, la masse de carburant, puis $Q_{CD}$ (explosion \textbf{isochore}, donc $C_v$) :
+\[ Q = n\,C_v\,\Delta T = m_{carburant}\cdot \text{PCI} \]
+\[ Q_{CD} = 875{,}79\text{ J},\qquad T_D = 3791{,}31\text{ K} \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « C$\to$D explosion isochore : $W=0$, $Q_{CD}=n\,C_v\,(T_D-T_C)=m_{carb}\cdot\text{PCI}
+\Rightarrow T_D=\ldots$ »
+\end{ecrire}
+
+\begin{step}
+\textbf{Détente D$\to$E adiabatique réversible} (même formule que B$\to$C, sens inverse) puis
+\textbf{échappement E$\to$A isochore} ($Q_{EA}=nC_v(T_A-T_E)$, $W=0$). Le script fait la somme :
+\[ \eta_{th} = \frac{|W_{tot}|}{Q_{CD}} = \frac{|W_{BC}+W_{DE}|}{Q_{CD}} \]
+\[ \eta_{th} = \mathbf{60{,}19\ \%} \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « $\eta_{th}=\dfrac{|W_{tot}|}{Q_{apportée}}$, cycle moteur donc $W_{tot}<0$ et
+$Q_{CD}>0$. »
+\end{ecrire}
+
+\begin{step}
+\textbf{Le script demande : $\eta_{forme}$, $\eta_{\text{méca}}$, puis $P_{eff}$ ou $N$.} Rendements en
+cascade puis lien puissance/vitesse (4 temps $\to$ un cycle = 2 tours) :
+\[ \eta_{\text{réel}}=\eta_{th}\cdot\eta_{forme}\cdot\eta_{\text{méca}},\qquad
+P_{th}=\frac{P_{eff}}{\eta_{forme}\cdot\eta_{\text{méca}}},\qquad
+N = \frac{P_{th}\cdot 2\cdot 60}{|W_{tot}|\cdot z} \]
+\[ N = \mathbf{1897}\text{ tr/min} \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « $P_{th}=P_{eff}/(\eta_{forme}\eta_{\text{méca}})$, puis
+$P_{th}=\dfrac{|W_{tot}|\cdot z \cdot N}{2\cdot 60}\Rightarrow N=\ldots$ (facteur 2 = 2 tours par
+cycle en 4 temps ; en 2 temps, pas de facteur 2). »
+\end{ecrire}
+
+\newpage
+%======================================================
+\section{PAC.py --- frigo / pompe à chaleur}
+
+\begin{enonce}
+\textbf{Exemple utilisé} (exercices supplémentaires officiels) : cycle NH$_3$, 4 points lus sur le
+diagramme $\log p$-$h$. $h_1\approx1760$, $h_2\approx2050$, $h_3=h_4\approx700$ kJ/kg.
+\end{enonce}
+
+\begin{step}
+\textbf{Le script demande : $h_1$, $h_2$, $h_3$ (ou $h_4$, ils sont égaux).} Ce sont des lectures de
+diagramme (voir section~3), pas des calculs -- le script ne fait que les combiner.
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « Lecture sur le diagramme $\log p$-$h$ : $h_1=1760$ kJ/kg, $h_2=2050$ kJ/kg,
+$h_3=h_4=700$ kJ/kg (détente 3-4 isenthalpique). »
+\end{ecrire}
+
+\begin{step}
+\textbf{Le script calcule $w$, $q_1$, $q_2$} (travail de compression, chaleur absorbée à l'évaporateur,
+chaleur cédée au condenseur) :
+\[ w = h_2-h_1,\qquad q_1 = h_1-h_4,\qquad q_2 = h_2-h_3=-(h_3-h_2) \]
+\[ w = 290\text{ kJ/kg},\qquad q_1 = 1060\text{ kJ/kg} \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « $w=h_2-h_1$ (compression), $q_1=h_1-h_4$ (évaporateur, effet utile côté
+froid). »
+\end{ecrire}
+
+\begin{step}
+\textbf{Le script calcule la PSN} (Performance Statique Nominale, appelée aussi COP froid) :
+\eqb{\text{PSN}=\frac{q_1}{w}=\frac{h_1-h_4}{h_2-h_1}}
+\[ \text{PSN} = \frac{1760-700}{2050-1760} = \mathbf{3{,}66} \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « PSN $=\dfrac{h_1-h_4}{h_2-h_1}=\dfrac{q_1}{w}$ (effet utile / énergie payée). »
+\end{ecrire}
+
+\begin{step}
+\textbf{Si l'énoncé demande le COP chaud (PAC)} plutôt que le froid (frigo), le script bascule sur
+$q_2$ au numérateur :
+\eqb{\text{COP}_{PAC} = \frac{|q_2|}{w} = \text{PSN}+1}
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « COP$_{PAC}=\dfrac{|q_2|}{w}$, et on vérifie COP$_{PAC}=$ PSN$+1$ (même
+compresseur, on compte juste la chaleur \emph{rejetée} au lieu de la chaleur \emph{absorbée}). »
+\end{ecrire}
+
+\begin{step}
+\textbf{Bornes de Carnot} (si le script les demande) : $T_{\text{évap}}$, $T_{cond}$ en Kelvin donnent la
+limite théorique maximale, jamais atteinte en pratique :
+\eqb{\text{PSN}_{Carnot}=\frac{T_{\text{évap}}}{T_{cond}-T_{\text{évap}}}}
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « PSN$_{Carnot}=\dfrac{T_{\text{évap}}}{T_{cond}-T_{\text{évap}}}$, PSN réelle toujours
+$<$ PSN$_{Carnot}$ (irréversibilités). »
+\end{ecrire}
+
+\newpage
+%======================================================
+\section{Lire le diagramme $\log p$-$h$ (NH$_3$ ou R134a)}
+
+\begin{info}
+C'est la partie que \textbf{le script ne peut pas faire à votre place} : il faut savoir placer les 4
+points sur le papier avant de rentrer les $h$ dans PAC.py. Axes : horizontal $=$ enthalpie massique
+$h$ (kJ/kg), vertical (log) $=$ pression $p$ (bar).
+\end{info}
+
+\begin{step}
+\textbf{Point 1 (sortie évaporateur, entrée compresseur).} On connaît $T_{\text{évap}}$
+$\Rightarrow$ une horizontale à $p_{\text{évap}}$ (lue sur la courbe de saturation à cette température).
+Le point 1 est sur la \textbf{courbe de vapeur saturée} (bord droit de la cloche), à cette pression --
+sauf s'il y a de la surchauffe, auquel cas on avance vers la droite le long de l'isobare, jusqu'à
+la bonne température de surchauffe.
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « Point 1 : intersection de l'isobare $p=p_{\text{évap}}(T_{\text{évap}})$ avec la courbe de
+vapeur saturée (ou plus loin si surchauffe). »
+\end{ecrire}
+
+\begin{step}
+\textbf{Point 2 (sortie compresseur).} Compression \textbf{adiabatique réversible} $=$
+\textbf{isentropique} : on suit une courbe d'entropie constante (les lignes obliques du diagramme)
+\textbf{depuis le point 1} jusqu'à croiser l'isobare $p_{cond}$.
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « Point 2 : on suit l'isentropique passant par le point 1 jusqu'à l'isobare
+$p=p_{cond}(T_{cond})$ (compression adiabatique réversible, $s_2=s_1$). »
+\end{ecrire}
+
+\begin{step}
+\textbf{Point 3 (sortie condenseur, entrée détendeur).} Sur l'isobare haute pression, sur la
+\textbf{courbe de liquide saturé} (bord gauche de la cloche) -- ou plus à gauche si sous-refroidissement.
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « Point 3 : intersection de l'isobare $p=p_{cond}$ avec la courbe de liquide
+saturé (ou plus à gauche si sous-refroidissement). »
+\end{ecrire}
+
+\begin{step}
+\textbf{Point 4 (sortie détendeur).} Détente \textbf{isenthalpique} (le détendeur ne fait ni travail
+ni échange de chaleur) $=$ \textbf{ligne verticale} depuis le point 3 jusqu'à l'isobare basse
+pression $p_{\text{évap}}$.
+\[ h_4 = h_3 \]
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « Point 4 : détente isenthalpique ($h_4=h_3$, ligne verticale) jusqu'à
+$p=p_{\text{évap}}$. »
+\end{ecrire}
+
+\begin{step}
+\textbf{Lire les 4 enthalpies.} Pour chaque point, projeter verticalement sur l'axe horizontal
+et lire la valeur en kJ/kg. C'est la seule étape où la précision dépend de votre tracé -- la prof
+accepte une tolérance sur les valeurs lues.
+\end{step}
+\begin{ecrire}
+\textbf{À écrire :} « $h_1=\ldots$, $h_2=\ldots$, $h_3=h_4=\ldots$ kJ/kg (lecture graphique). »
+\end{ecrire}
+
+\end{document}

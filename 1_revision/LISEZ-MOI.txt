@@ -26,6 +26,15 @@ MECATHERMO Ma0 - Dossier de revision
                                de la prof, explique pas a pas (cycle bonus,
                                moteur essence, frigo NH3) avec renvois vers les
                                captures d ecran originales dans 2_casio/exos_suppl_*
+  08-fiches-scripts.pdf        Pour MOTEUR.py (essence) et PAC.py (frigo) + lire
+                               le diagramme log p-h : a chaque question posee par
+                               le script, la formule qu il applique, et un encadre
+                               "a ecrire sur la copie" (utile script OU main)
+  09-entrainement-exos-images.pdf  Les 3 exercices de 2_casio/exos_suppl_* repris
+                               en entier : chaque etape calculee avec la formule,
+                               le remplacement numerique ET un encadre "pourquoi
+                               cette formule" -- cachez la correction et refaites
+                               avant de comparer
   tex/                         Sources LaTeX (recompilables, pdflatex 2 passes)
 
 2_casio/       Boite a outils calculatrice (voir son propre LISEZ-MOI)
@@ -44,8 +53,9 @@ ORDRE DE TRAVAIL CONSEILLE
   2. Travailler 02 : les demonstrations tombent telles quelles a l examen
   3. Lire 03 pour ancrer la marche a suivre, puis refaire les exos de 01 seul
   4. Traiter 04 en conditions d examen, sans regarder les reponses
-  5. Finir par 06 (et 07 si tu veux un 4e regard sur essence/frigo/cycles,
-     avec les copies d ecran du document officiel de la prof)
+  5. Finir par 06, puis 07/08/09 pour un dernier passage cible essence/frigo/
+     cycles : 07 = pas a pas court, 08 = le lien avec les scripts calculatrice,
+     09 = version longue entrainement avec le "pourquoi" de chaque formule
 
 LES 3 EXOS QUI TOMBENT LE PLUS
   - gaz refrigerant (R134a / NH3) : lecture du diagramme (log p, h), PSN / COP
