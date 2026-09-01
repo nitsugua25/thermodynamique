@@ -1,0 +1,69 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\contentsname}{Table des matières}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue}
+
+% ---- boîtes personnalisées ----
+\newmdenv[
+  linecolor=blue!60!black, backgroundcolor=blue!4,
+  linewidth=1pt, roundcorner=4pt, innermargin=8pt, innertopmargin=8pt, innerbottommargin=8pt,
+  skipabove=8pt, skipbelow=8pt
+]{methode}
+
+\newmdenv[
+  linecolor=orange!70!black, backgroundcolor=orange!6,
+  linewidth=1pt, roundcorner=4pt, innermargin=8pt, innertopmargin=8pt, innerbottommargin=8pt,
+  skipabove=8pt, skipbelow=8pt
+]{piege}
+
+\newmdenv[
+  linecolor=black!60, backgroundcolor=black!3,
+  linewidth=0.8pt, roundcorner=3pt, innermargin=8pt, innertopmargin=6pt, innerbottommargin=6pt,
+  skipabove=8pt, skipbelow=8pt
+]{enonce}
+
+\newmdenv[
+  linecolor=green!45!black, backgroundcolor=green!5,
+  linewidth=1pt, roundcorner=4pt, innermargin=8pt, innertopmargin=6pt, innerbottommargin=6pt,
+  skipabove=6pt, skipbelow=10pt
+]{correction}
+
+\newcommand{\eqbox}[1]{\[\boxed{#1}\]}
+
+\title{\textbf{Préparation examen -- Mécathermo}\\[4pt]\large Guide de résolution, fiches méthode \& exercices corrigés}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1.2cm}
+\begin{center}
+\small\itshape Basé sur le syllabus « Mise à niveau thermodynamique » et les exercices supplémentaires du cours.\\
+Le formulaire officiel est autorisé à l'examen : ce document donne la \emph{méthode} pour l'utiliser efficacement.
+\end{center}
+\vspace{0.4cm}
+
+\tableofcontents
+\newpage
+
+\input{00_methode}
+\newpage
+\input{01_moteurs}
+\newpage
+\input{02_frigo_pac}
+\newpage
+\input{03_exercices}
+
+\end{document}

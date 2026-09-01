@@ -1,0 +1,670 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2026.8.10)  30 AUG 2026 02:15
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./fiches-planches.tex
+(fiches-planches.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2026-07-20>
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count266
+\c@section=\count267
+\c@subsection=\count268
+\c@subsubsection=\count269
+\c@paragraph=\count270
+\c@subparagraph=\count271
+\c@figure=\count272
+\c@table=\count273
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen147
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count274
+\U@D=\dimen148
+\l@unhyphenated=\language79
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count275
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\french.l
+df
+Language: french 2024-07-25 v3.6c French support from the babel system
+Package babel Info: Hyphen rules for 'acadian' set to \l@french
+(babel)             (\language22). Reported on input line 91.
+Package babel Info: Hyphen rules for 'canadien' set to \l@french
+(babel)             (\language22). Reported on input line 92.
+\FB@stdchar=\count276
+Package babel Info: Making : an active character on input line 421.
+Package babel Info: Making ; an active character on input line 422.
+Package babel Info: Making ! an active character on input line 423.
+Package babel Info: Making ? an active character on input line 424.
+\FBguill@level=\count277
+\FBold@everypar=\toks19
+\FB@Mht=\dimen149
+\mc@charclass=\count278
+\mc@charfam=\count279
+\mc@charslot=\count280
+\std@mcc=\count281
+\dec@mcc=\count282
+\FB@parskip=\dimen150
+\listindentFB=\dimen151
+\descindentFB=\dimen152
+\labelindentFB=\dimen153
+\labelwidthFB=\dimen154
+\leftmarginFB=\dimen155
+\parindentFFN=\dimen156
+\FBfnindent=\dimen157
+))
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/fr\babel
+-french.tex
+Package babel Info: Importing font and identification data for french
+(babel)             from babel-fr.ini. Reported on input line 11.
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen158
+\Gm@wd@mp=\dimen159
+\Gm@odd@mp=\dimen160
+\Gm@even@mp=\dimen161
+\Gm@layoutwidth=\dimen162
+\Gm@layoutheight=\dimen163
+\Gm@layouthoffset=\dimen164
+\Gm@layoutvoffset=\dimen165
+\Gm@dimlist=\toks21
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen166
+\Gin@req@width=\dimen167
+) (C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2026-07-20 L3 programming layer (loader) 
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count286
+))
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count287
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+) (C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count288
+Package zref Info: New property: abspage on input line 67.
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
+Package: needspace 2025/03/13 v1.3e reserve vertical space
+)
+\mdf@templength=\skip50
+\c@mdf@globalstyle@cnt=\count289
+\mdf@skipabove@length=\skip51
+\mdf@skipbelow@length=\skip52
+\mdf@leftmargin@length=\skip53
+\mdf@rightmargin@length=\skip54
+\mdf@innerleftmargin@length=\skip55
+\mdf@innerrightmargin@length=\skip56
+\mdf@innertopmargin@length=\skip57
+\mdf@innerbottommargin@length=\skip58
+\mdf@splittopskip@length=\skip59
+\mdf@splitbottomskip@length=\skip60
+\mdf@outermargin@length=\skip61
+\mdf@innermargin@length=\skip62
+\mdf@linewidth@length=\skip63
+\mdf@innerlinewidth@length=\skip64
+\mdf@middlelinewidth@length=\skip65
+\mdf@outerlinewidth@length=\skip66
+\mdf@roundcorner@length=\skip67
+\mdf@footenotedistance@length=\skip68
+\mdf@userdefinedwidth@length=\skip69
+\mdf@needspace@length=\skip70
+\mdf@frametitleaboveskip@length=\skip71
+\mdf@frametitlebelowskip@length=\skip72
+\mdf@frametitlerulewidth@length=\skip73
+\mdf@frametitleleftmargin@length=\skip74
+\mdf@frametitlerightmargin@length=\skip75
+\mdf@shadowsize@length=\skip76
+\mdf@extratopheight@length=\skip77
+\mdf@subtitleabovelinewidth@length=\skip78
+\mdf@subtitlebelowlinewidth@length=\skip79
+\mdf@subtitleaboveskip@length=\skip80
+\mdf@subtitlebelowskip@length=\skip81
+\mdf@subtitleinneraboveskip@length=\skip82
+\mdf@subtitleinnerbelowskip@length=\skip83
+\mdf@subsubtitleabovelinewidth@length=\skip84
+\mdf@subsubtitlebelowlinewidth@length=\skip85
+\mdf@subsubtitleaboveskip@length=\skip86
+\mdf@subsubtitlebelowskip@length=\skip87
+\mdf@subsubtitleinneraboveskip@length=\skip88
+\mdf@subsubtitleinnerbelowskip@length=\skip89
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box52
+\mdf@footnotebox=\box53
+\mdf@splitbox@one=\box54
+\mdf@splitbox@two=\box55
+\mdf@splitbox@save=\box56
+\mdfsplitboxwidth=\skip90
+\mdfsplitboxtotalwidth=\skip91
+\mdfsplitboxheight=\skip92
+\mdfsplitboxdepth=\skip93
+\mdfsplitboxtotalheight=\skip94
+\mdfframetitleboxwidth=\skip95
+\mdfframetitleboxtotalwidth=\skip96
+\mdfframetitleboxheight=\skip97
+\mdfframetitleboxdepth=\skip98
+\mdfframetitleboxtotalheight=\skip99
+\mdffootnoteboxwidth=\skip100
+\mdffootnoteboxtotalwidth=\skip101
+\mdffootnoteboxheight=\skip102
+\mdffootnoteboxdepth=\skip103
+\mdffootnoteboxtotalheight=\skip104
+\mdftotallinewidth=\skip105
+\mdfboundingboxwidth=\skip106
+\mdfboundingboxtotalwidth=\skip107
+\mdfboundingboxheight=\skip108
+\mdfboundingboxdepth=\skip109
+\mdfboundingboxtotalheight=\skip110
+\mdf@freevspace@length=\skip111
+\mdf@horizontalwidthofbox@length=\skip112
+\mdf@verticalmarginwhole@length=\skip113
+\mdf@horizontalspaceofbox=\skip114
+\mdfsubtitleheight=\skip115
+\mdfsubsubtitleheight=\skip116
+\c@mdfcountframes=\count290
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count291
+\c@mdf@env@i=\count292
+\c@mdf@env@ii=\count293
+\c@mdf@zref@counter=\count294
+Package zref Info: New property: mdf@pagevalue on input line 895.
+) (fiches-planches.aux)
+\openout1 = `fiches-planches.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Info: Redefining \degres on input line 26.
+LaTeX Info: Redefining \up on input line 26.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(48.36958pt, 500.7687pt, 48.36958pt)
+* v-part:(T,H,B)=(48.36958pt, 748.30768pt, 48.36958pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=500.7687pt
+* \textheight=748.30768pt
+* \oddsidemargin=-23.9004pt
+* \evensidemargin=-23.9004pt
+* \topmargin=-60.9004pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count295
+\scratchdimen=\dimen168
+\scratchbox=\box57
+\nofMPsegments=\count296
+\nofMParguments=\count297
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count298
+\MPscratchDim=\dimen169
+\MPnumerator=\count299
+\makeMPintoPDFobject=\count300
+\everyMPtoPDFconversion=\toks23
+)
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\augus\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 31.
+<../images/D01-essence-volumes-points.png, id=1, 385.44pt x 216.81pt>
+File: ../images/D01-essence-volumes-points.png Graphic file (type png)
+<use ../images/D01-essence-volumes-points.png>
+Package pdftex.def Info: ../images/D01-essence-volumes-points.png  used on inpu
+t line 38.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 38.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 38.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 38.
+<../images/D02-essence-combustion-rendement.png, id=2, 385.44pt x 216.81pt>
+File: ../images/D02-essence-combustion-rendement.png Graphic file (type png)
+<use ../images/D02-essence-combustion-rendement.png>
+Package pdftex.def Info: ../images/D02-essence-combustion-rendement.png  used o
+n input line 39.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [1
+
+{C:/Users/augus/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <../images/D0
+1-essence-volumes-points.png (PNG copy)> <../images/D02-essence-combustion-rend
+ement.png (PNG copy)>]
+<../images/D03-diesel-ce-qui-change.png, id=17, 385.44pt x 216.81pt>
+File: ../images/D03-diesel-ce-qui-change.png Graphic file (type png)
+<use ../images/D03-diesel-ce-qui-change.png>
+Package pdftex.def Info: ../images/D03-diesel-ce-qui-change.png  used on input 
+line 41.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D04-diesel-points-rendement.png, id=18, 385.44pt x 216.81pt>
+File: ../images/D04-diesel-points-rendement.png Graphic file (type png)
+<use ../images/D04-diesel-points-rendement.png>
+Package pdftex.def Info: ../images/D04-diesel-points-rendement.png  used on inp
+ut line 42.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [2
+
+ <../images/D03-diesel-ce-qui-change.png (PNG copy)> <../images/D04-diesel-poin
+ts-rendement.png (PNG copy)>]
+<../images/D05-moteur-2-temps.png, id=22, 385.44pt x 216.81pt>
+File: ../images/D05-moteur-2-temps.png Graphic file (type png)
+<use ../images/D05-moteur-2-temps.png>
+Package pdftex.def Info: ../images/D05-moteur-2-temps.png  used on input line 4
+4.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D06-combustion-reaction.png, id=23, 385.44pt x 216.81pt>
+File: ../images/D06-combustion-reaction.png Graphic file (type png)
+<use ../images/D06-combustion-reaction.png>
+Package pdftex.def Info: ../images/D06-combustion-reaction.png  used on input l
+ine 45.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [3
+
+ <../images/D05-moteur-2-temps.png (PNG copy)> <../images/D06-combustion-reacti
+on.png (PNG copy)>]
+<../images/D07-combustion-chaleur.png, id=28, 385.44pt x 216.81pt>
+File: ../images/D07-combustion-chaleur.png Graphic file (type png)
+<use ../images/D07-combustion-chaleur.png>
+Package pdftex.def Info: ../images/D07-combustion-chaleur.png  used on input li
+ne 47.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D08-exces-air-consequences.png, id=29, 385.44pt x 216.81pt>
+File: ../images/D08-exces-air-consequences.png Graphic file (type png)
+<use ../images/D08-exces-air-consequences.png>
+Package pdftex.def Info: ../images/D08-exces-air-consequences.png  used on inpu
+t line 48.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [4
+
+ <../images/D07-combustion-chaleur.png (PNG copy)> <../images/D08-exces-air-con
+sequences.png (PNG copy)>]
+<../images/D09-frigo-placer-points.png, id=33, 385.44pt x 216.81pt>
+File: ../images/D09-frigo-placer-points.png Graphic file (type png)
+<use ../images/D09-frigo-placer-points.png>
+Package pdftex.def Info: ../images/D09-frigo-placer-points.png  used on input l
+ine 50.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D10-frigo-energies.png, id=34, 385.44pt x 216.81pt>
+File: ../images/D10-frigo-energies.png Graphic file (type png)
+<use ../images/D10-frigo-energies.png>
+Package pdftex.def Info: ../images/D10-frigo-energies.png  used on input line 5
+1.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [5
+
+ <../images/D09-frigo-placer-points.png (PNG copy)> <../images/D10-frigo-energi
+es.png (PNG copy)>]
+<../images/D11-psn-cop.png, id=38, 385.44pt x 216.81pt>
+File: ../images/D11-psn-cop.png Graphic file (type png)
+<use ../images/D11-psn-cop.png>
+Package pdftex.def Info: ../images/D11-psn-cop.png  used on input line 53.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D12-carnot-debits.png, id=39, 385.44pt x 216.81pt>
+File: ../images/D12-carnot-debits.png Graphic file (type png)
+<use ../images/D12-carnot-debits.png>
+Package pdftex.def Info: ../images/D12-carnot-debits.png  used on input line 54
+.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [6
+
+ <../images/D11-psn-cop.png (PNG copy)> <../images/D12-carnot-debits.png (PNG c
+opy)>]
+<../images/D13-turbine-joule.png, id=43, 385.44pt x 216.81pt>
+File: ../images/D13-turbine-joule.png Graphic file (type png)
+<use ../images/D13-turbine-joule.png>
+Package pdftex.def Info: ../images/D13-turbine-joule.png  used on input line 56
+.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D14-turbine-astuce.png, id=44, 385.44pt x 216.81pt>
+File: ../images/D14-turbine-astuce.png Graphic file (type png)
+<use ../images/D14-turbine-astuce.png>
+Package pdftex.def Info: ../images/D14-turbine-astuce.png  used on input line 5
+7.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [7
+
+ <../images/D13-turbine-joule.png (PNG copy)> <../images/D14-turbine-astuce.png
+ (PNG copy)>]
+<../images/D15-transfo-isobare-isochore.png, id=49, 385.44pt x 216.81pt>
+File: ../images/D15-transfo-isobare-isochore.png Graphic file (type png)
+<use ../images/D15-transfo-isobare-isochore.png>
+Package pdftex.def Info: ../images/D15-transfo-isobare-isochore.png  used on in
+put line 59.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D16-transfo-isotherme-adiab.png, id=50, 385.44pt x 216.81pt>
+File: ../images/D16-transfo-isotherme-adiab.png Graphic file (type png)
+<use ../images/D16-transfo-isotherme-adiab.png>
+Package pdftex.def Info: ../images/D16-transfo-isotherme-adiab.png  used on inp
+ut line 60.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [8
+
+ <../images/D15-transfo-isobare-isochore.png (PNG copy)> <../images/D16-transfo
+-isotherme-adiab.png (PNG copy)>]
+<../images/D17-constantes.png, id=54, 385.44pt x 216.81pt>
+File: ../images/D17-constantes.png Graphic file (type png)
+<use ../images/D17-constantes.png>
+Package pdftex.def Info: ../images/D17-constantes.png  used on input line 62.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D18-entropie.png, id=55, 385.44pt x 216.81pt>
+File: ../images/D18-entropie.png Graphic file (type png)
+<use ../images/D18-entropie.png>
+Package pdftex.def Info: ../images/D18-entropie.png  used on input line 63.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [9
+
+ <../images/D17-constantes.png (PNG copy)> <../images/D18-entropie.png (PNG cop
+y)>]
+<../images/D19-echange-thermique.png, id=59, 385.44pt x 216.81pt>
+File: ../images/D19-echange-thermique.png Graphic file (type png)
+<use ../images/D19-echange-thermique.png>
+Package pdftex.def Info: ../images/D19-echange-thermique.png  used on input lin
+e 65.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D20-rendements-cascade.png, id=60, 385.44pt x 216.81pt>
+File: ../images/D20-rendements-cascade.png Graphic file (type png)
+<use ../images/D20-rendements-cascade.png>
+Package pdftex.def Info: ../images/D20-rendements-cascade.png  used on input li
+ne 66.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [10
+
+ <../images/D19-echange-thermique.png (PNG copy)> <../images/D20-rendements-cas
+cade.png (PNG copy)>]
+<../images/D21-puissance.png, id=64, 385.44pt x 216.81pt>
+File: ../images/D21-puissance.png Graphic file (type png)
+<use ../images/D21-puissance.png>
+Package pdftex.def Info: ../images/D21-puissance.png  used on input line 68.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/D22-verifications.png, id=65, 385.44pt x 216.81pt>
+File: ../images/D22-verifications.png Graphic file (type png)
+<use ../images/D22-verifications.png>
+Package pdftex.def Info: ../images/D22-verifications.png  used on input line 69
+.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [11
+
+ <../images/D21-puissance.png (PNG copy)> <../images/D22-verifications.png (PNG
+ copy)>]
+<../images/D23-ordres-de-grandeur.png, id=69, 385.44pt x 216.81pt>
+File: ../images/D23-ordres-de-grandeur.png Graphic file (type png)
+<use ../images/D23-ordres-de-grandeur.png>
+Package pdftex.def Info: ../images/D23-ordres-de-grandeur.png  used on input li
+ne 71.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [12
+
+ <../images/D23-ordres-de-grandeur.png (PNG copy)>]
+<../images/S01-cycle-essence.png, id=73, 385.44pt x 216.81pt>
+File: ../images/S01-cycle-essence.png Graphic file (type png)
+<use ../images/S01-cycle-essence.png>
+Package pdftex.def Info: ../images/S01-cycle-essence.png  used on input line 74
+.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/S02-cycle-diesel.png, id=74, 385.44pt x 216.81pt>
+File: ../images/S02-cycle-diesel.png Graphic file (type png)
+<use ../images/S02-cycle-diesel.png>
+Package pdftex.def Info: ../images/S02-cycle-diesel.png  used on input line 75.
+
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [13
+
+ <../images/S01-cycle-essence.png (PNG copy)> <../images/S02-cycle-diesel.png (
+PNG copy)>]
+<../images/S03-quatre-transformations.png, id=79, 385.44pt x 216.81pt>
+File: ../images/S03-quatre-transformations.png Graphic file (type png)
+<use ../images/S03-quatre-transformations.png>
+Package pdftex.def Info: ../images/S03-quatre-transformations.png  used on inpu
+t line 77.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/S04-schema-frigo.png, id=80, 385.44pt x 216.81pt>
+File: ../images/S04-schema-frigo.png Graphic file (type png)
+<use ../images/S04-schema-frigo.png>
+Package pdftex.def Info: ../images/S04-schema-frigo.png  used on input line 78.
+
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+
+[14
+
+ <../images/S03-quatre-transformations.png (PNG copy)> <../images/S04-schema-fr
+igo.png (PNG copy)>]
+<../images/S05-diagramme-logp-h.png, id=84, 385.44pt x 216.81pt>
+File: ../images/S05-diagramme-logp-h.png Graphic file (type png)
+<use ../images/S05-diagramme-logp-h.png>
+Package pdftex.def Info: ../images/S05-diagramme-logp-h.png  used on input line
+ 80.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/S06-moteur-ou-recepteur.png, id=85, 385.44pt x 216.81pt>
+File: ../images/S06-moteur-ou-recepteur.png Graphic file (type png)
+<use ../images/S06-moteur-ou-recepteur.png>
+Package pdftex.def Info: ../images/S06-moteur-ou-recepteur.png  used on input l
+ine 81.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [15
+
+ <../images/S05-diagramme-logp-h.png (PNG copy)> <../images/S06-moteur-ou-recep
+teur.png (PNG copy)>]
+<../images/S07-ferme-ou-ouvert.png, id=89, 385.44pt x 216.81pt>
+File: ../images/S07-ferme-ou-ouvert.png Graphic file (type png)
+<use ../images/S07-ferme-ou-ouvert.png>
+Package pdftex.def Info: ../images/S07-ferme-ou-ouvert.png  used on input line 
+83.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+<../images/S08-cycle-joule.png, id=90, 385.44pt x 216.81pt>
+File: ../images/S08-cycle-joule.png Graphic file (type png)
+<use ../images/S08-cycle-joule.png>
+Package pdftex.def Info: ../images/S08-cycle-joule.png  used on input line 84.
+(pdftex.def)             Requested size: 360.55408pt x 202.81226pt.
+ [16
+
+ <../images/S07-ferme-ou-ouvert.png (PNG copy)> <../images/S08-cycle-joule.png 
+(PNG copy)>]
+(fiches-planches.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2026-07-20>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 6501 strings out of 470373
+ 119269 string characters out of 5493759
+ 521424 words of memory out of 5000000
+ 32819 multiletter control sequences out of 15000+600000
+ 634074 words of font info for 57 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 76i,6n,79p,492b,428s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\augus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
+1095.pk> <C:\Users\augus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecbx1095.pk> <C:\Users\augus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecbx1200.pk> <C:\Users\augus\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecbx1000.pk> <C:\Users\augus\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\augus\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1440.pk><C:/Users/augus/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/augus/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/augus/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/augus/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
+/augus/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+
+Output written on fiches-planches.pdf (16 pages, 680877 bytes).
+PDF statistics:
+ 328 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+

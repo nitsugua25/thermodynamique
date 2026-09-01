@@ -1,0 +1,156 @@
+\section{Travail élémentaire réversible (diapos 34-40, dont 36-38)}
+
+\begin{objectif}
+\textbf{Objectif :} trouver une formule pour le travail échangé par un gaz qui se comprime ou se détend de
+façon réversible (infiniment lente), à partir d'un simple bilan de forces sur un piston.
+\end{objectif}
+
+\begin{demotable}
+$F = p\cdot S$ (état initial, piston à l'équilibre) &
+Un piston de surface $S$ contenant un gaz à la pression $p$ subit une force $F=p\cdot S$ de la part du gaz.
+Au départ le piston est à l'équilibre. \\
+On augmente la force d'une quantité infinitésimale $dF$ ; le piston s'abaisse de $dl$ &
+On pousse \emph{très légèrement} plus fort que l'équilibre (transformation réversible = infiniment lente) :
+le piston bouge d'un tout petit déplacement $dl$. \\
+$dW = |(F+dF)\cdot dl|$ &
+Le travail élémentaire, c'est la force appliquée multipliée par le déplacement de son point d'application. \\
+$dF$ négligeable devant $F$, donc $F+dF \approx F$ &
+Comme $dF$ est infinitésimal, on peut le négliger \emph{dans le calcul de la force}, mais pas dans le
+mouvement qu'il provoque. \\
+$dW = |F\cdot dl| = |p\cdot S\cdot dl|$ &
+On remplace $F$ par $p\cdot S$. \\
+$dW>0$, $p>0$, $dl<0$ &
+On regarde les signes : le travail reçu par le gaz lors d'une compression doit être positif ($dW>0$), la
+pression est toujours positive, donc le déplacement $dl$ (compté positivement vers le haut) doit être
+négatif (le piston descend, le gaz se comprime). \\
+$dW = -p\cdot S\cdot dl$ &
+Pour que $dW$ soit positif alors que $dl$ est négatif, il faut un signe $-$ devant. \\
+$dW = -p\cdot dV$ &
+$S\cdot dl$ est justement la variation élémentaire de volume $dV$ (surface $\times$ déplacement). C'est la
+formule du \textbf{formulaire}. \\
+\end{demotable}
+
+\textbf{En intégrant} $dW=-p\,dV$ entre l'état initial $i$ et l'état final $f$ :
+\eqbox{W = -\int_{V_i}^{V_f} p\,dV}
+
+\begin{demotable}
+Isochore : $dV=0$ &
+Le volume ne varie pas $\Rightarrow$ $\boxed{W=0}$ (pas de déplacement du piston, pas de travail). \\
+Isobare : $p=$ constante sort de l'intégrale &
+$\boxed{W=-p\,(V_f-V_i)}$. \\
+Isotherme, gaz parfait : $pV=nRT \Rightarrow p=\dfrac{nRT}{V}$ &
+On remplace $p$ dans l'intégrale. \\
+$W=-\displaystyle\int \frac{nRT}{V}\,dV = -nRT\int\frac{1}{V}\,dV$ &
+$T$ est constante (isotherme) donc $nRT$ sort de l'intégrale ; il reste $\int \frac{1}{V}dV = \ln V$. \\
+$\boxed{W = -nRT\,\ln\!\left(\dfrac{V_2}{V_1}\right)}$ &
+Résultat de l'intégration entre $V_1$ et $V_2$. \\
+\end{demotable}
+
+\begin{retenir}
+\textbf{Lecture d'un cycle sur un diagramme $p$-$V$ :} l'aire sous une courbe $=|W|$ de cette
+transformation, et l'aire \emph{enfermée} par le cycle $=|W_{cycle}|$.
+
+Pour un cycle parcouru dans le \textbf{sens horaire} : la \textbf{détente} se fait sur la partie
+\textbf{haute} du cycle (à haute pression) et donne $W<0$ de grande valeur absolue ; la
+\textbf{compression} se fait sur la partie \textbf{basse} (à basse pression) et ne coûte que $W>0$ plus
+petit. La détente l'emporte donc $\Rightarrow$ $W_{cycle}<0$ : le cycle \textbf{fournit} du travail,
+c'est un \textbf{cycle moteur}.
+
+Parcouru en \textbf{sens antihoraire}, c'est l'inverse (on comprime à haute pression et on détend à basse
+pression) $\Rightarrow$ $W_{cycle}>0$, le cycle \textbf{reçoit} du travail : c'est un \textbf{cycle
+récepteur} (frigo, PAC).
+\end{retenir}
+
+\newpage
+\section{Premier principe : énoncé et transformation entre deux points (diapos 41-49)}
+
+\begin{demotable}
+$\Delta U + \Delta E_{cin} + \Delta E_{pot} = W + Q$ &
+Conservation de l'énergie : la variation de toute l'énergie du système (interne + cinétique + potentielle)
+est égale à ce qu'il a reçu comme travail et comme chaleur. \\
+$U$ : somme de l'énergie cinétique des particules et de l'énergie d'interaction entre elles, au niveau
+microscopique &
+C'est ce qu'on appelle l'énergie interne : toute l'agitation et les interactions invisibles à notre échelle. \\
+$U$, $E_{cin}$, $E_{pot}$ sont des \textbf{fonctions d'état} ; $W$ et $Q$ \textbf{dépendent du chemin suivi} &
+Une fonction d'état ne dépend que de l'état actuel du système (pas de comment on y est arrivé). $W$ et $Q$
+dépendent, eux, de la transformation précise (réversible ou réelle) empruntée. \\
+Pour un \textbf{cycle} (transformation fermée) : $U_i=U_f$, $E_{cin,i}=E_{cin,f}$, $E_{pot,i}=E_{pot,f}$ &
+Dans un cycle, l'état final est identique à l'état initial (les états intermédiaires peuvent différer) donc
+toutes les fonctions d'état reviennent à leur valeur de départ. \\
+$\boxed{W+Q=0}$ pour un cycle &
+Il ne reste que les termes qui dépendent du chemin ; leur somme sur le cycle complet doit être nulle. \\
+\end{demotable}
+
+\textbf{Ce qui se passe entre deux points A et B (raisonnement du cours) :} on prend un cycle A$\to$B via
+un chemin $a$, puis B$\to$A via un chemin $c$ (c'est un cycle, donc $W_a+Q_a+W_c+Q_c=0$). On refait pareil
+avec un autre chemin $b$ pour aller de A à B : $W_b+Q_b+W_c+Q_c=0$. En comparant les deux lignes, le terme
+$W_c+Q_c$ (commun) disparaît :
+\eqbox{W_a+Q_a = W_b+Q_b}
+
+\begin{retenir}
+\textbf{Conclusion (diapo 49) :} si on ne regarde \emph{que} la transformation ouverte de A vers B (sans le
+retour), la somme $W+Q$ est \textbf{la même quel que soit le chemin suivi} entre ces deux points -- que ce
+chemin soit réversible ou réel. Cela confirme que $W+Q=\Delta U+\Delta E_{cin}+\Delta E_{pot}$ ne dépend que
+des points de départ et d'arrivée, jamais du trajet.
+\end{retenir}
+
+\newpage
+\section{Premier principe en machine ouverte (diapos 65-72, dont 68-73)}
+
+\begin{objectif}
+\textbf{Objectif :} dans un compresseur, une turbine, une pompe... le fluide \emph{traverse} la machine en
+continu. On veut une formule utilisable pour le \textbf{travail utile} $W_{ut}$ réellement échangé avec
+l'arbre de la machine (et pas le travail «perdu» à pousser le fluide devant et derrière soi).
+\end{objectif}
+
+\textbf{Hypothèses :} régime permanent (le débit massique et les grandeurs physiques ne varient pas dans le
+temps), fluide parfait (pas d'interactions entre molécules), transformation réversible.
+
+\textbf{Schéma :} on suit une tranche de fluide de masse $M$, comprise entre les sections $S_a,S_b$ à
+l'instant $t$ (entrée à pression $p_1$, volume $V_1$) et entre $S'_a,S'_b$ à l'instant $t+\Delta t$ (sortie
+à pression $p_2$, volume $V_2$).
+
+\begin{demotable}
+$W_t = W_{ut} - p_2V_2 + p_1V_1$ &
+Le travail total des forces extérieures sur la tranche de fluide = le travail utile donné par la machine
+$\pm$ le travail des pressions d'entrée/sortie : $p_1V_1$ est le travail que le fluide \emph{derrière}
+pousse sur notre tranche (il la fait avancer, énergie reçue), $p_2V_2$ est le travail que notre tranche doit
+fournir pour pousser le fluide \emph{devant} elle (énergie cédée). \\
+1\textsuperscript{er} principe sur $M$ pendant $\Delta t$ :
+$U_2-U_1+\Delta E_{cin}+\Delta E_{pot} = W_{ut}-p_2V_2+p_1V_1+Q$ &
+On applique simplement $\Delta U+\Delta E_{cin}+\Delta E_{pot}=W+Q$ en remplaçant $W$ par l'expression du
+travail total trouvée juste au-dessus. \\
+$(U_2+p_2V_2)-(U_1+p_1V_1)+\Delta E_{cin}+\Delta E_{pot}=W_{ut}+Q$ &
+On regroupe les termes en $p_1V_1$ et $p_2V_2$ avec les $U$ correspondants. \\
+$\boxed{\Delta H+\Delta E_{cin}+\Delta E_{pot}=W_{ut}+Q}$ &
+On reconnaît $U+pV=H$ (l'enthalpie) en 1 et en 2. C'est la version «machine ouverte» du 1\textsuperscript{er}
+principe -- à comparer avec $\Delta U=W+Q$ en système fermé. \\
+Par unité de masse : $dh+\dfrac{c^2}{2}+g\,\Delta z = w_{ut}+q$ &
+Même relation, en divisant tout par la masse (c = vitesse du fluide, $\Delta z$ = variation d'altitude). \\
+\end{demotable}
+
+\textbf{Isoler $W_{ut}$} (cas où $\Delta E_{cin}=\Delta E_{pot}=0$, on repart de la même équation) :
+
+\begin{demotable}
+$W_{ut}-p_2V_2+p_1V_1+Q = W_{ut}-\Delta(pV)+Q = W_{ut}-\displaystyle\int_1^2 d(pV)+Q$ &
+$p_2V_2-p_1V_1$ est la variation de la fonction $pV$ entre 1 et 2, qu'on peut écrire comme une intégrale. \\
+$= W_{ut}-\displaystyle\int_1^2 p\,dV-\int_1^2 V\,dp+Q$ &
+On utilise la règle de dérivation d'un produit : $d(pV)=p\,dV+V\,dp$. \\
+$U_2-U_1=W_{ut}-\displaystyle\int_1^2 p\,dV-\int_1^2 V\,dp+Q$ &
+On réinjecte ceci dans le 1\textsuperscript{er} principe de départ. \\
+Or, pour la même tranche : $\Delta U=W_t+Q$ et $W_t=-\displaystyle\int p\,dV$
+$\Rightarrow \Delta U - Q=-\displaystyle\int p\,dV$ &
+On utilise une deuxième expression de $\Delta U$, celle d'un système fermé classique (le travail des forces
+de pression «normales» sur la tranche). \\
+$W_{ut}=\displaystyle\int_1^2 p\,dV+\int_1^2 V\,dp-\int_1^2 p\,dV$ &
+On combine les deux expressions de $U_2-U_1$ : les termes en $\int p\,dV$ et $Q$ s'annulent des deux côtés. \\
+$\boxed{W_{ut}=\displaystyle\int_1^2 V\,dp}$ \quad (si $\Delta E_{cin}=\Delta E_{pot}=0$) &
+C'est le résultat central : le travail utile d'un compresseur/turbine se calcule avec $\int V\,dp$, \textbf{pas}
+avec $\int p\,dV$ (qui, lui, ne concerne que les systèmes fermés). \\
+Cas général : $\boxed{W_{ut}=\displaystyle\int_1^2 V\,dp+\dfrac{mc^2}{2}+mg\,\Delta z}$ &
+On rajoute les termes cinétique et potentiel si on ne peut pas les négliger. \\
+Fluide réel (avec frottements) : $\boxed{W_{ut}=\displaystyle\int_1^2 V\,dp+\dfrac{mc^2}{2}+mg\,\Delta z+W_f}$,
+$W_f>0$ &
+Les frottements (entre particules, ou entre le fluide et les parois) coûtent toujours de l'énergie
+supplémentaire, on l'ajoute avec un signe $+$. \\
+\end{demotable}

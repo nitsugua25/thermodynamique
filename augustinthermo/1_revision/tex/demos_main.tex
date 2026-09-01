@@ -1,0 +1,75 @@
+\documentclass[10.5pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\contentsname}{Table des matières}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue}
+
+\newmdenv[
+  linecolor=violet!55!black, backgroundcolor=violet!5,
+  linewidth=1pt, roundcorner=4pt, innermargin=8pt, innertopmargin=6pt, innerbottommargin=6pt,
+  skipabove=8pt, skipbelow=8pt
+]{objectif}
+
+\newmdenv[
+  linecolor=orange!70!black, backgroundcolor=orange!6,
+  linewidth=1pt, roundcorner=4pt, innermargin=8pt, innertopmargin=6pt, innerbottommargin=6pt,
+  skipabove=8pt, skipbelow=8pt
+]{retenir}
+
+% tableau ligne-par-ligne : colonne 1 = calcul (source du cours), colonne 2 = explication
+\newenvironment{demotable}{%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{7.3cm} >{\raggedright\arraybackslash}p{8.3cm}@{}}
+\toprule
+\textbf{Étape (calcul)} & \textbf{Explication}\\
+\midrule
+\endfirsthead
+\multicolumn{2}{l}{\small\itshape (suite)}\\[2pt]
+\toprule
+\textbf{Étape (calcul)} & \textbf{Explication}\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+}{\end{longtable}}
+
+\newcommand{\eqbox}[1]{\[\boxed{#1}\]}
+
+\title{\textbf{Démonstrations à connaître -- Mécathermo}\\[4pt]\large Étape par étape, ligne par ligne}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-1cm}
+\begin{center}
+\small\itshape Chaque démonstration reprend le raisonnement du syllabus ligne par ligne, avec une explication
+courte de ce qui se passe à chaque étape. Les numéros de diapositives cités sont ceux du syllabus.
+\end{center}
+\vspace{0.3cm}
+\tableofcontents
+\newpage
+
+\input{d1_travail_principe}
+\newpage
+\input{d2_chaleurs_adiabatique}
+\newpage
+\input{d3_reversible_carnot_joule}
+\newpage
+\input{d4_moteurs}
+\newpage
+\input{d5_entropie_frigo}
+
+\end{document}

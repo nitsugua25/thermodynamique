@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=1.7cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\definecolor{NavyB}{HTML}{123A75}
+\definecolor{AccR}{HTML}{A81E12}
+\definecolor{GrnD}{HTML}{0C5730}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\newmdenv[linecolor=NavyB!35,backgroundcolor=NavyB!4,linewidth=0.8pt,
+  roundcorner=3pt,innermargin=6pt,innertopmargin=5pt,innerbottommargin=5pt,
+  skipabove=2mm,skipbelow=5mm]{expl}
+\newcommand{\fiche}[4]{%
+\begin{center}\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.5pt}%
+\fbox{\includegraphics[width=0.70\linewidth]{../images/#1.png}}\end{center}
+\vspace{-1mm}
+\begin{expl}
+{\color{NavyB}\bfseries #2}\par\vspace{0.8mm}
+{\bfseries\color{AccR}Ce qu'elle montre.} #3\par\vspace{0.8mm}
+{\bfseries\color{GrnD}Quand la sortir.} #4
+\end{expl}}
+\newcommand{\serie}[2]{\clearpage{\color{NavyB}\large\bfseries #1}\par
+{\small #2}\par\vspace{3mm}}
+\begin{document}
+\begin{center}
+{\color{NavyB}\Large\bfseries Les 78 fiches écran expliquées\par}
+\vspace{1mm}
+{\small Mécathermo Ma0 --- Casio fx-CG50\\[1mm]
+Chaque fiche est reproduite à sa taille réelle ($384\times216$ px), suivie de ce qu'elle
+contient et du moment où il faut l'ouvrir.\\[1mm]
+\textbf{D} démarche \quad \textbf{S} schéma \quad \textbf{T} démonstration \quad
+\textbf{E} exercice résolu chiffré}
+\end{center}
+\vspace{2mm}
+{\color{NavyB}\large\bfseries Fiches DÉMARCHE}\par{\small L'ordre dans lequel rédiger, une idée par fiche.}\par\vspace{3mm}
+\fiche{D01-essence-volumes-points}{Essence : volumes et premiers points}{Volumes a partir de la cylindree et de $\varepsilon$, quantite de matiere $n$, point C par la compression adiabatique.}{Des que l enonce parle d un moteur essence. C est toujours par la qu on commence.}
+\fiche{D02-essence-combustion-rendement}{Essence : fin du cycle}{Une fois $Q_{CD}$ connu : point D (isochore), point E (detente) et rendement theorique.}{Apres D06-D07 (la combustion). Enchainer sur D20 pour les rendements reels.}
+\clearpage
+\fiche{D03-diesel-ce-qui-change}{Diesel : les 4 differences}{$\varepsilon$ plus grand, air seul, combustion isobare, nouveau parametre $\rho$.}{A lire AVANT tout exercice diesel : evite l erreur $C_v$ / $C_p$.}
+\fiche{D04-diesel-points-rendement}{Diesel : points et rendement}{Points D et E, chaleur avec $C_p$, formule de rendement avec $\rho$.}{Juste apres D03 ; volumes et point C se font avec D01.}
+\clearpage
+\fiche{D05-moteur-2-temps}{Moteur 2 temps}{Meme cycle que l essence ; seule la formule de puissance change.}{Des que l enonce dit 2 temps : empeche de garder le $/2$ du 4 temps.}
+\fiche{D06-combustion-reaction}{Combustion : equilibrer et passer a l air}{Equation de combustion, passage O$_2$ vers air (21\%), exces d air $\lambda$.}{Des qu on donne une formule CH$_x$ et un $\lambda$.}
+\clearpage
+\fiche{D07-combustion-chaleur}{Combustion : jusqu a la chaleur}{Repartir les moles, convertir en masse, obtenir $Q_{CD}$ avec le PCI.}{Immediatement apres D06. Le PCI est en kJ/kg : penser au $\times1000$.}
+\fiche{D08-exces-air-consequences}{Exces d air : consequences}{Ce qui arrive si $\lambda$ est trop petit (CO, imbrules) ou trop grand (perte).}{Question de cours pure, souvent posee telle quelle.}
+\clearpage
+\fiche{D09-frigo-placer-points}{Frigo : placer les 4 points}{Marche a suivre pour placer 1', 2', 3', 4' avec surchauffe et sous-refroidissement.}{Des qu on vous donne un diagramme (log p, h). La plus utile de toutes.}
+\fiche{D10-frigo-energies}{Frigo : les trois energies}{Correction du point 2 par $\eta_{isos}$, puis $w$, $q_1$, $q_2$.}{Une fois les points places. Faire la verification $q_1+q_2+w=0$.}
+\clearpage
+\fiche{D11-psn-cop}{PSN ou COP ?}{Le choix de la formule selon frigo (utile au froid) ou PAC (utile au chaud).}{Au moment de la question de performance : c est la qu on perd des points.}
+\fiche{D12-carnot-debits}{Carnot et debits}{Bornes $PSN_{max}$ / $COP_{max}$, puis passage des kJ/kg aux kW.}{Pour verifier la credibilite, puis des qu une puissance en kW est donnee.}
+\clearpage
+\fiche{D13-turbine-joule}{Turbine a gaz : les regles}{Les deux formules de machine ouverte : adiabatique et isobare, par kg.}{Des qu il y a compresseur, turbine et debit massique.}
+\fiche{D14-turbine-astuce}{Turbine : l astuce du sujet}{La phrase piege << la turbine entraine le compresseur >> donne $T_3-T_4=T_2-T_1$.}{Quand une turbine est liee au compresseur.}
+\clearpage
+\fiche{D15-transfo-isobare-isochore}{Transformation a $p$ ou $V$ constant}{$W$ et $Q$ pour isobare et isochore.}{Pour une transformation seule, ou pour remplir une ligne du tableau d energies.}
+\fiche{D16-transfo-isotherme-adiab}{Transformation a $T$ cste ou $Q=0$}{$W$ et $Q$ pour isotherme et adiabatique, avec les 3 formes.}{Meme usage que D15 ; on choisit la forme selon les variables connues.}
+\clearpage
+\fiche{D17-constantes}{Les constantes a poser}{$C_v$, $C_p$, Mayer, et les valeurs pour $\gamma=1,4$.}{Tout au debut de l exercice, des que $\gamma$ est donne.}
+\fiche{D18-entropie}{Variation d entropie}{Les 4 formules de $\Delta S$ et $\Delta S=0$ sur un cycle.}{Si une question demande une variation d entropie.}
+\clearpage
+\fiche{D19-echange-thermique}{Echange thermique}{$Q=mc\Delta T$, chaleur latente, et $P=\dot m c\Delta T$.}{Pour la partie circuit d eau qui accompagne l exercice frigo.}
+\fiche{D20-rendements-cascade}{Cascade des rendements}{$\eta_{th}$ puis $\eta_{forme}$ puis $\eta_{meca}$, et le rendement effectif.}{Des que l enonce donne un rendement de forme et un rendement mecanique.}
+\clearpage
+\fiche{D21-puissance}{Du travail a la puissance}{Les formules 4 temps et 2 temps, et la formule inverse pour le regime.}{Derniere question d un exercice moteur.}
+\fiche{D22-verifications}{Les verifications avant de rendre}{Les 5 controles, dont la somme nulle sur un cycle.}{Systematiquement, avant de passer a la suite.}
+\clearpage
+\fiche{D23-ordres-de-grandeur}{Ordres de grandeur}{Valeurs plausibles de $T$, $p$, $\eta$, $COP$, $N$.}{Quand un resultat parait bizarre.}
+\fiche{D24-molaire-ou-massique}{Molaire ou massique ?}{Les 2 jeux de constantes ($R$ et $C$ en mol, $r$ et $c$ en kg) et le fait qu on ne les melange jamais.}{Si vous croisez $c_p=1004$ ou un debit en kg/s : c est le seul cas ou on quitte les moles. Sinon, $R=8{,}314$ partout.}
+\serie{Fiches SCHÉMA}{Les dessins à savoir refaire de tête.}
+\fiche{S01-cycle-essence}{Cycle essence en $p$-$V$}{Le cycle Beau de Rochas avec le code couleur des transformations.}{Quand on demande de tracer le cycle, ou pour savoir quelle transfo relie 2 points.}
+\fiche{S02-cycle-diesel}{Cycle diesel en $p$-$V$}{Le meme cycle avec le palier isobare C-D au lieu de la verticale.}{Le comparer a S01 est le meilleur moyen de retenir la difference.}
+\clearpage
+\fiche{S03-quatre-transformations}{Les 4 courbes par un meme point}{Isochore verticale, isobare horizontale, isotherme et adiabatique.}{Question d examen telle quelle. A savoir redessiner de tete.}
+\fiche{S04-schema-frigo}{Les organes d une machine frigo}{Les 4 elements en boucle avec la numerotation 1 a 4.}{Question d examen telle quelle.}
+\clearpage
+\fiche{S05-diagramme-logp-h}{Le cycle sur le diagramme des frigoristes}{L allure du cycle une fois place sur le (log p, h).}{A garder sous les yeux pendant la lecture du diagramme reel.}
+\fiche{S06-moteur-ou-recepteur}{Moteur ou recepteur ?}{Le sens de parcours qui distingue les deux, et le signe de $W$.}{Question d examen, et controle de signe en fin d exercice.}
+\clearpage
+\fiche{S07-ferme-ou-ouvert}{Systeme ferme ou ouvert}{La distinction visuelle et la formule associee a chacun.}{Chaque fois qu on hesite entre $C_v$ et $C_p$.}
+\fiche{S08-cycle-joule}{Cycle de Joule en $p$-$V$}{Les 2 adiabatiques et les 2 isobares d une turbine a gaz.}{Pour situer les points d un exercice de turbine.}
+\serie{Fiches DÉMONSTRATION}{Les démonstrations listées par la prof, déroulées pas à pas sur plusieurs fiches.}
+\fiche{T01-travail-elem-1}{Travail elementaire (1/3)}{Le bilan de forces sur le piston et $dW=|(F+dF)d\ell|$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T02-travail-elem-2}{Travail elementaire (2/3)}{L analyse des signes qui donne $dW=-p\,dV$, puis l integration.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T03-travail-elem-3}{Travail elementaire (3/3)}{Les 3 cas particuliers : isochore, isobare, isotherme.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T04-premier-principe}{Premier principe}{L enonce, la distinction fonction d etat / chemin, et $W+Q=0$ sur un cycle.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T05-machine-ouverte-1}{Machine ouverte (1/3)}{Le travail total des forces exterieures sur la tranche de fluide.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T06-machine-ouverte-2}{Machine ouverte (2/3)}{Le regroupement qui fait apparaitre l enthalpie : $\Delta H=W_{ut}+Q$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T07-machine-ouverte-3}{Machine ouverte (3/3)}{La decomposition $d(pV)$ qui mene a $W_{ut}=\int V\,dp$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T08-chaleurs-spec-1}{Chaleurs specifiques (1/3)}{La formule generale de $C$ a partir du 1er principe.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T09-chaleurs-spec-2}{Chaleurs specifiques (2/3)}{Les cas $V$ cste et $p$ cste, avec l astuce du terme nul ajoute.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T10-mayer}{Relation de Mayer (3/3)}{$C_p-C_v=R$ et la definition de $\gamma$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T11-adiabatique-1}{Adiabatique (1/4)}{La mise en equation : $nC_v\,dT+p\,dV=0$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T12-adiabatique-2}{Adiabatique (2/4)}{La substitution de $p$ et la division qui prepare l integration.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T13-adiabatique-3}{Adiabatique (3/4)}{L integration et l exponentielle : $TV^{\gamma-1}=$ cste.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T14-adiabatique-4}{Adiabatique (4/4)}{Les deux autres formes obtenues par substitution.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T15-reversible-irreversible}{Reversible / irreversible}{Le resume : $W_{irr}>W_{rev}$ et $Q_{irr}<Q_{rev}$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T16-carnot-1}{Carnot (1/3)}{Le bilan du cycle et $\eta=1+Q_2/Q_1$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T17-carnot-2}{Carnot (2/3)}{Les chaleurs isothermes et les relations adiabatiques.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T18-carnot-3}{Carnot (3/3)}{La simplification des logarithmes et le resultat final.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T19-joule-1}{Joule (1/2)}{Le rendement avec $C_p$ et les relations adiabatiques en $p$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T20-joule-2}{Joule (2/2)}{Le resultat $\eta_J=1-T_A/T_B$ et la comparaison a Carnot.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T21-essence-rendement-1}{Rendement essence (1/2)}{Les deux isochores et la relation entre les 4 temperatures.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T22-essence-rendement-2}{Rendement essence (2/2)}{Le passage a $\varepsilon$ : $\eta=1-\varepsilon^{1-\gamma}$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T23-diesel-rendement-1}{Rendement diesel (1/2)}{Le rendement avec $C_p$, et les rapports $\varepsilon$ et $\rho$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T24-diesel-rendement-2}{Rendement diesel (2/2)}{La detente sur $\rho/\varepsilon$ et la formule finale.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T25-entropie-1}{Entropie (1/2)}{Carnot generalise, la definition de $S$ et l entropie creee.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T26-entropie-2}{Entropie (2/2)}{Les 4 formules de calcul de $\Delta S$.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T27-psn-max}{$PSN_{max}$}{La demonstration a partir du bilan et de l entropie nulle.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T28-cop-max}{$COP_{max}$}{La meme demarche pour la pompe a chaleur.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T29-second-principe-enonces}{2e principe : enonces}{Kelvin, Clausius, et le vocabulaire mono/di/polytherme.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T30-monotherme-fermee}{Fermee monotherme}{La demonstration des signes en reversible puis en irreversible.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T31-formes-des-courbes}{Formes iso-T / adiabatique}{Les pentes obtenues par derivation, et pourquoi l adiabatique est plus pentue.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T32-pci-pcs}{PCI et PCS}{La difference (eau liquide ou vaporisee) et lequel utiliser.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T33-carnot-description}{Carnot : description et utilite}{Les 4 transformations et pourquoi ce cycle sert de reference.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\fiche{T34-joule-description}{Joule : description et utilite}{Les 4 transformations et son usage en turbine a gaz.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\clearpage
+\fiche{T35-essence-les-4-temps}{Essence : les 4 temps}{La description de chaque temps avec la transformation correspondante.}{Demonstration listee par la prof comme pouvant tomber. A savoir refaire de tete.}
+\serie{Fiches EXERCICE RÉSOLU}{Les 3 types d'exercices de l'examen, entièrement traités avec les nombres.}
+\fiche{E01-cycle-enonce}{Exo cycle (1/3)}{L enonce et le tableau d etat : les 3 points calcules un par un.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\fiche{E02-cycle-w-et-q}{Exo cycle (2/3)}{$W$ et $Q$ de chaque transformation, avec les nombres.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\clearpage
+\fiche{E03-cycle-bilan}{Exo cycle (3/3)}{Le bilan, la verification a zero et le rendement.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\fiche{E04-essence-enonce}{Exo essence (1/5)}{Les volumes a partir de la cylindree et de $\varepsilon$.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\clearpage
+\fiche{E05-essence-point-C}{Exo essence (2/5)}{$n$ et le point C, chiffres.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\fiche{E06-essence-combustion}{Exo essence (3/5)}{Toute la chaine de combustion jusqu a $Q_{CD}$.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\clearpage
+\fiche{E07-essence-points-D-E}{Exo essence (4/5)}{Les points D et E.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\fiche{E08-essence-rendement}{Exo essence (5/5)}{Le rendement, la cascade et la vitesse de rotation.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\clearpage
+\fiche{E09-frigo-enonce}{Exo frigo (1/4)}{Les enthalpies, dont la correction du point 2.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\fiche{E10-frigo-energies}{Exo frigo (2/4)}{$w$, $q_1$, $q_2$ et la verification.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\clearpage
+\fiche{E11-frigo-cop}{Exo frigo (3/4)}{Le COP et sa comparaison a Carnot.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\fiche{E12-frigo-debits}{Exo frigo (4/4)}{Les debits de fluide et d eau, et la puissance du compresseur.}{Exercice entierement resolu avec les nombres : le modele a suivre le jour J.}
+\end{document}

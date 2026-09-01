@@ -1,0 +1,147 @@
+\section{Méthode générale de résolution}
+
+Les exercices d'examen sont presque toujours un \textbf{cycle} (moteur, frigo/PAC) ou une \textbf{suite de
+transformations} d'un gaz ou d'un fluide. La méthode ci-dessous fonctionne dans tous les cas : elle consiste
+à remplir un \emph{tableau d'état} point par point, puis à appliquer les principes de la thermo transformation
+par transformation. C'est la même logique que celle utilisée partout dans le syllabus (moteurs, frigo, cycles
+industriels).
+
+\begin{methode}
+\textbf{Les 6 étapes, dans l'ordre}
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.6em]
+\item \textbf{Dessiner le schéma du système} (ouvert/fermé) et le \textbf{cycle en diagramme $p$-$V$} (ou
+$\log p$-$h$ pour un frigo). Identifier chaque transformation : isobare, isochore, isotherme, adiabatique
+réversible.
+\item \textbf{Numéroter/lettrer les points} (comme dans le cours : A,B,C,... ou 1,2,3,...) et faire un
+\textbf{tableau} avec une colonne par point et une ligne par grandeur ($p$, $V$, $T$, $n$ ou $m$).
+\item \textbf{Remplir ce que l'énoncé donne directement}, puis \textbf{propager} à l'aide des lois de
+transformation (tableau ci-dessous) jusqu'à avoir $p,V,T$ en chaque point.
+\item \textbf{Calculer $W$ et $Q$ pour chaque transformation} (formules ci-dessous), en respectant les signes.
+\item \textbf{Sommer sur le cycle} : $W_{cycle}=\sum W_i$, $Q_{cycle}=\sum Q_i$ (doit donner $\Delta U_{cycle}=0$,
+c'est une bonne vérification).
+\item \textbf{Répondre à la question posée} : rendement, COP/PSN, puissance, débit, etc. -- toujours en
+reliant à $W$ et $Q$ déjà calculés.
+\end{enumerate}
+\end{methode}
+
+\subsection{Reconnaître le type de transformation}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule
+\textbf{Transfo} & \textbf{Loi} & \textbf{Comment la reconnaître dans l'énoncé} \\
+\midrule
+Isobare ($p$=cste) & $V/T=$cste & « admission/échappement », « échangeur (condenseur/évaporateur) »,
+« combustion diesel », chauffage/refroidissement dans un circuit ouvert \\
+Isochore ($V$=cste) & $p/T=$cste & « explosion » (essence), soupapes fermées à volume bloqué, chute de
+pression à l'échappement \\
+Isotherme ($T$=cste) & $pV=$cste & rare dans ce cours (Carnot théorique) \\
+Adiabatique réversible & $pV^\gamma=$cste \quad $TV^{\gamma-1}=$cste \quad $T^\gamma V^{1-\gamma}=$cste
+& compression/détente \textbf{rapide} : compresseur, turbine, compression/détente dans un cylindre
+(pas le temps d'échanger de la chaleur) \\
+Isenthalpique ($h$=cste) & $h=$cste & détente dans une \textbf{soupape/vanne de détente} (frigo) \\
+Isentropique & $s$=cste & compression \textbf{réversible} dans un compresseur frigo (1-2) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{piege}
+\textbf{Piège classique} : ne pas confondre une adiabatique \emph{réversible} ($pV^\gamma=$cste, utilisable
+seulement ici) avec une adiabatique quelconque ($Q=0$ mais pas forcément cette loi). Dans ce cours, sauf
+mention contraire, toute compression/détente « rapide » est supposée adiabatique réversible.
+\end{piege}
+
+\subsection{Les deux versions du 1\textsuperscript{er} principe}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}l l X@{}}
+\toprule
+\textbf{Système} & \textbf{Formule} & \textbf{Quand l'utiliser} \\
+\midrule
+\textbf{Fermé} (cylindre, gaz enfermé) & $\Delta U = W + Q$ \quad avec $dU=nC_v\,dT$ &
+Moteurs à piston (cycle B-C-D-E dans le cylindre) \\
+\textbf{Ouvert} (fluide qui traverse une machine) & $\Delta H = W_{ut} + Q$ \quad avec $dH=nC_p\,dT$ &
+Compresseur, turbine, échangeur, soupape de détente (frigo, cycles à débit) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{piege}
+\textbf{Erreur n°1 à l'examen} : utiliser $C_v$ dans un système ouvert (ou l'inverse). Règle simple :
+\emph{ça coule dans un tuyau/une machine à débit} $\Rightarrow$ ouvert $\Rightarrow$ $H$ et $C_p$.
+\emph{C'est enfermé dans un cylindre/récipient} $\Rightarrow$ fermé $\Rightarrow$ $U$ et $C_v$.
+\end{piege}
+
+\subsection{Travail et chaleur transformation par transformation}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{}l X X@{}}
+\toprule
+& \textbf{Système fermé} ($W=-\int p\,dV$) & \textbf{Système ouvert} ($W_{ut}$) \\
+\midrule
+Isobare & $W=-p\Delta V$, \ $Q=nC_v\Delta T + p\Delta V = nC_p\Delta T\ (\text{si } \Delta U{=}nC_v\Delta T)$ &
+$W_{ut}=0$ (pas de pièce mobile utile), \ $Q=\Delta H = nC_p\Delta T$ \\
+Isochore & $W=0$, \ $Q=\Delta U = nC_v\Delta T$ & (n'existe pas en ouvert : pas de sens physique) \\
+Adiabatique rév. & $Q=0$, \ $W=\Delta U = nC_v\Delta T$ & $Q=0$, \ $W_{ut}=\Delta H = nC_p\Delta T$
+(compresseur/turbine) \\
+Isenthalpique & -- & $\Delta H=0 \Rightarrow Q=-W_{ut}$ ; soupape de détente : $W_{ut}=0 \Rightarrow Q=0$
+donc $h$ constante \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Conventions de signe (à respecter tout le temps)}
+
+\begin{itemize}[leftmargin=1.4em]
+\item Énergie \textbf{reçue} par le système (chaleur ou travail) $\rightarrow$ \textbf{positive}.
+\item Énergie \textbf{cédée} par le système $\rightarrow$ \textbf{négative}.
+\item Un \textbf{cycle moteur} (tourne dans le sens horaire sur le diagramme $p$-$V$) \textbf{fournit} du
+travail à l'extérieur $\Rightarrow$ $W_{cycle}<0$.
+\item Un \textbf{cycle récepteur} (frigo, PAC -- sens antihoraire) \textbf{reçoit} du travail
+$\Rightarrow$ $W_{cycle}>0$.
+\item Toujours travailler en \textbf{Kelvin} pour les lois des gaz et les rapports adiabatiques.
+\end{itemize}
+
+\subsection{Rendements et coefficients -- à ne jamais confondre}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule
+\textbf{Grandeur} & \textbf{Définition} \\
+\midrule
+$\eta_{\text{théorique}}$ & $\dfrac{|W_{\text{théorique}}|}{Q_{CD}}$ -- rendement du cycle idéal (courbes théoriques
+p-V), ne dépend que de $\varepsilon$ (et $\rho$ pour le diesel) \\
+$\eta_{forme}=\eta_f$ & $\dfrac{|W_{\text{indiqué}}|}{|W_{\text{théorique}}|}$ -- pertes car le cycle réel ne suit pas
+exactement les courbes théoriques (combustion non instantanée, refroidissement parois, pertes de charge) \\
+$\eta_{\text{méca}}$ & $\dfrac{|W_{disponible}|}{|W_{\text{indiqué}}|}$ -- pertes par frottements mécaniques \\
+$\eta_{eff}$ & $\eta_{th}\cdot\eta_f\cdot\eta_{\text{méca}}=\dfrac{|W_{disponible}|}{Q_{CD}}$ -- rendement global,
+$Q_{CD}=m_{carburant}\cdot PCI$ \\
+$COP$ (pompe à chaleur) & $\dfrac{-Q_1}{W}$ -- énergie utile = chaleur cédée à la source chaude \\
+$PSN$ (frigo) & $\dfrac{Q_2}{W}$ -- énergie utile = chaleur prise à la source froide \\
+$\eta_{Carnot}/COP_{max}/PSN_{max}$ & bornes théoriques \emph{réversibles} entre $T_1$ (chaude) et $T_2$
+(froide) : $\eta_{Carnot}=1-\dfrac{T_2}{T_1}$, \ $COP_{max}=\dfrac{T_1}{T_1-T_2}$, \
+$PSN_{max}=\dfrac{T_2}{T_1-T_2}$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{piege}
+Un rendement \textbf{ne se calcule presque jamais directement} : c'est toujours un \textbf{rapport de deux
+travaux/chaleurs} que vous avez calculés à l'étape 4-5 de la méthode. Ne cherchez pas une « formule magique »
+sans être passé par le tableau d'état.
+\end{piege}
+
+\subsection{Check-list avant de rendre une copie}
+\begin{itemize}[leftmargin=1.4em]
+\item Toutes les températures sont-elles en Kelvin ?
+\item Le signe de $W$ et $Q$ est-il cohérent avec le sens du cycle (moteur $\to$ négatif, récepteur $\to$
+positif) ?
+\item $\Delta U_{cycle}=0$ et $\Delta H_{cycle}=0$ ont-ils été vérifiés (somme des transformations) ?
+\item Le rendement trouvé est-il \textbf{physiquement raisonnable} (entre 0 et $\eta_{Carnot}$ pour un moteur,
+$COP>1$ pour une PAC) ?
+\item Les unités sont-elles cohérentes (J vs kJ, bar vs Pa) ?
+\end{itemize}

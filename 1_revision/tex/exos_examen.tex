@@ -1,0 +1,377 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\contentsname}{Table des matières}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.1cm}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black}
+
+\definecolor{cbleu}{RGB}{25,80,180}
+\definecolor{cvert}{RGB}{20,120,55}
+\definecolor{cgris}{RGB}{95,95,95}
+
+\newmdenv[linecolor=cgris!60,backgroundcolor=cgris!5,linewidth=0.8pt,roundcorner=3pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{enonce}
+\newmdenv[linecolor=cvert,backgroundcolor=cvert!5,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{verif}
+\newmdenv[linecolor=cbleu,backgroundcolor=cbleu!5,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{info}
+
+\newcommand{\ex}[1]{\par\medskip\noindent{\color{cbleu}\bfseries\large #1}\par\smallskip}
+\newcommand{\eqb}[1]{\[\boxed{#1}\]}
+
+\title{\textbf{Exercices type examen}\\[3pt]
+\large Les 3 types annoncés par la prof --- énoncés puis corrections complètes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-0.9cm}
+
+\begin{info}
+D'après le mail de M\textsuperscript{me} Delchevalerie, les exercices de l'examen portent
+\textbf{uniquement} sur trois choses :
+\begin{itemize}[leftmargin=1.4em,nosep]
+\item des transformations ou des cycles où il faut déterminer $p$, $V$, et/ou $W$ et $Q$,
+et/ou le rendement ;
+\item des moteurs \textbf{essence} ;
+\item des machines \textbf{frigo/PAC}.
+\end{itemize}
+Ce document contient 3 exercices de chaque type. \textbf{Traitez la partie 1 en conditions
+d'examen}, puis comparez avec la partie 2.
+
+\smallskip
+Données : $R=8{,}314$ J/(mol$\cdot$K) ; air $\gamma=1{,}4$ donc $C_v=20{,}785$ et
+$C_p=29{,}099$ J/(mol$\cdot$K) ; air $21\%$ O$_2$ ; $c_{eau}=4185$ J/(kg$\cdot$K).
+\end{info}
+
+\tableofcontents
+\newpage
+
+%======================================================
+\section{Partie 1 --- Énoncés}
+
+\subsection{Transformations et cycles}
+
+\ex{A1 --- Compression adiabatique}
+\begin{enonce}
+On comprime \textbf{2 moles} d'air de façon \textbf{adiabatique réversible}. État initial :
+$20\,^\circ$C sous 1 bar. État final : 8 bar.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Calculez $V_1$.
+\item Calculez $T_2$ puis $V_2$.
+\item Calculez $W$, $Q$, $\Delta U$ et $\Delta H$.
+\end{enumerate}
+\end{enonce}
+
+\ex{A2 --- Cycle à deux isochores et deux isobares}
+\begin{enonce}
+\textbf{1 mole} d'air décrit le cycle A$\to$B$\to$C$\to$D$\to$A suivant.
+A : 1 bar et 300 K. A$\to$B \textbf{isochore} jusqu'à 3 bar. B$\to$C \textbf{isobare}
+jusqu'au double du volume. C$\to$D \textbf{isochore} jusqu'à 1 bar. D$\to$A \textbf{isobare}.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Donnez $p$, $V$ et $T$ aux quatre points.
+\item Calculez $W$ et $Q$ de chaque transformation.
+\item Vérifiez le bilan du cycle. Le cycle est-il moteur ?
+\item Calculez le rendement.
+\end{enumerate}
+\end{enonce}
+
+\ex{A3 --- Cycle de Carnot}
+\begin{enonce}
+\textbf{1 mole} d'air décrit un cycle de Carnot entre une source chaude à \textbf{500 K} et une
+source froide à \textbf{300 K}. La détente isotherme B$\to$C fait passer le volume de
+\textbf{10 L à 30 L}.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Calculez le rendement par la formule de Carnot.
+\item Calculez $Q_1$ (chaleur reçue de la source chaude).
+\item Déduisez-en le travail du cycle, puis $Q_2$.
+\item Retrouvez le rendement par $\eta=1+Q_2/Q_1$.
+\item Calculez $V_A$ et $V_D$, et vérifiez que $V_A/V_D=V_B/V_C$.
+\end{enumerate}
+\end{enonce}
+
+\subsection{Moteur essence}
+
+\ex{B1 --- Les points du cycle}
+\begin{enonce}
+Moteur essence 4 temps, \textbf{monocylindre}, cylindrée \textbf{500 cm$^3$}, rapport
+volumétrique $\varepsilon=9$. Air aspiré à $25\,^\circ$C sous 1 bar.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Calculez $V_A$ et $V_B$.
+\item Calculez le nombre de moles admises.
+\item Calculez $T_C$ et $p_C$.
+\item Calculez le rendement théorique.
+\end{enumerate}
+\end{enonce}
+
+\ex{B2 --- La combustion}
+\begin{enonce}
+Même moteur qu'en B1. Le carburant a pour formule \textbf{CH$_{1,85}$}, l'excès d'air vaut
+$\lambda=1{,}15$ et son PCI vaut \textbf{43 500 kJ/kg}.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Calculez la quantité d'air réelle par mole de carburant.
+\item Calculez la masse de carburant admise par cycle.
+\item Calculez $Q_{CD}$.
+\item Calculez $T_D$, $p_D$, puis $T_E$ et $p_E$.
+\end{enumerate}
+\end{enonce}
+
+\ex{B3 --- La puissance}
+\begin{enonce}
+On monte \textbf{4 cylindres} identiques à celui de B1--B2. Les rendements valent
+$\eta_{forme}=0{,}72$ et $\eta_{m\acute{e}ca}=0{,}85$. Le moteur tourne à \textbf{4500 tr/min}.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Calculez le travail théorique, indiqué puis disponible (par cylindre et par cycle).
+\item Calculez la puissance effective du moteur.
+\item Calculez le rendement effectif global.
+\end{enumerate}
+\end{enonce}
+
+\subsection{Machines frigorifiques et pompes à chaleur}
+
+\ex{C1 --- Machine frigorifique}
+\begin{enonce}
+Une machine frigorifique doit produire \textbf{8 kW} de froid. Lecture sur le diagramme :
+$h_1=396$, $h_2=430$, $h_3=252$ kJ/kg.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Donnez $h_4$ et calculez $w$, $q_1$, $q_2$. Vérifiez votre bilan.
+\item Calculez la PSN.
+\item Calculez le débit de fluide frigorigène.
+\item Calculez la puissance du compresseur et celle évacuée au condenseur.
+\end{enumerate}
+\end{enonce}
+
+\ex{C2 --- Pompe à chaleur avec compresseur réel}
+\begin{enonce}
+PAC fonctionnant entre une évaporation à $-10\,^\circ$C et une condensation à $42\,^\circ$C.
+Lecture : $h_1=399$ kJ/kg, $h_{2s}=433$ kJ/kg (point isentropique), $h_3=260$ kJ/kg. Le
+rendement isentropique du compresseur vaut $\eta_{isos}=0{,}72$.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Calculez $h_2$ réel.
+\item Calculez $w$, $q_1$, $q_2$ et vérifiez le bilan.
+\item Calculez le COP.
+\item Calculez le COP maximal théorique. Le résultat est-il crédible ?
+\end{enumerate}
+\end{enonce}
+
+\ex{C3 --- La même PAC sur un circuit de chauffage}
+\begin{enonce}
+La PAC de C2 chauffe une maison qui perd \textbf{15 kW}. L'eau des radiateurs se réchauffe de
+$7\,^\circ$C en traversant le condenseur.
+\begin{enumerate}[label=\alph*),leftmargin=1.6em,nosep]
+\item Calculez le débit de fluide frigorigène.
+\item Calculez la puissance électrique du compresseur.
+\item Vérifiez par un bilan de puissance.
+\item Calculez le débit d'eau, en kg/s puis en m$^3$/h.
+\end{enumerate}
+\end{enonce}
+
+\newpage
+%======================================================
+\section{Partie 2 --- Corrections}
+
+\subsection{A1 --- Compression adiabatique}
+
+\textbf{a)} $T_1=293{,}15$ K.
+\[V_1=\frac{nRT_1}{p_1}=\frac{2\times8{,}314\times293{,}15}{10^5}
+=\mathbf{48{,}75\ \text{L}}\]
+
+\textbf{b)} Adiabatique reliant $T$ et $p$ :
+\[T_2=T_1\left(\frac{p_2}{p_1}\right)^{\frac{\gamma-1}{\gamma}}
+=293{,}15\times 8^{0,2857}=293{,}15\times1{,}8114=\mathbf{531{,}0\ \text{K}}\]
+\[V_2=\frac{nRT_2}{p_2}=\frac{2\times8{,}314\times531{,}0}{8\times10^5}=\mathbf{11{,}04\ \text{L}}\]
+
+\textbf{c)} Adiabatique $\Rightarrow \boxed{Q=0}$, donc $W=\Delta U$ :
+\[W=\Delta U=nC_v\Delta T=2\times20{,}785\times(531{,}0-293{,}15)=\mathbf{+9888\ \text{J}}\]
+\[\Delta H=nC_p\Delta T=2\times29{,}099\times237{,}85=\mathbf{+13\,844\ \text{J}}\]
+\emph{$W>0$ : on fournit du travail au gaz, c'est bien une compression.}
+
+\subsection{A2 --- Cycle à deux isochores et deux isobares}
+
+\textbf{a)} $V_A=\dfrac{nRT_A}{p_A}=\dfrac{8{,}314\times300}{10^5}=24{,}94$ L.
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}l cccc@{}}
+\toprule
+& \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D}\\
+\midrule
+$p$ [bar] & 1 & 3 & 3 & 1\\
+$V$ [L] & 24{,}94 & 24{,}94 & 49{,}88 & 49{,}88\\
+$T$ [K] & 300 & \textbf{900} & \textbf{1800} & \textbf{600}\\
+\bottomrule
+\end{tabular}
+\end{center}
+\emph{Isochore : $p/T$ constant $\Rightarrow T_B=3T_A=900$ K. Isobare : $V/T$ constant
+$\Rightarrow T_C=2T_B=1800$ K. Isochore : $T_D=T_C/3=600$ K.}
+
+\textbf{b)}
+\begin{center}\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{}l l X r r@{}}
+\toprule
+& \textbf{Type} & \textbf{Calcul} & $W$ [J] & $Q$ [J]\\
+\midrule
+A$\to$B & isochore & $W=0$ ; $Q=nC_v(T_B{-}T_A)=20{,}785\times600$ & $0$ & $+12\,471$\\
+B$\to$C & isobare & $W=-p\Delta V=-3\!\cdot\!10^5\times24{,}94\!\cdot\!10^{-3}$ ;
+$Q=nC_p\times900$ & $-7483$ & $+26\,189$\\
+C$\to$D & isochore & $Q=nC_v(600{-}1800)$ & $0$ & $-24\,942$\\
+D$\to$A & isobare & $W=-10^5\times(-24{,}94\!\cdot\!10^{-3})$ ; $Q=nC_p(-300)$ & $+2494$ & $-8730$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{c)} $\sum W=-7483+2494=\mathbf{-4988}$ J et
+$\sum Q=12\,471+26\,189-24\,942-8730=\mathbf{+4988}$ J.
+\begin{verif}
+$\sum W+\sum Q=0$ \checkmark \quad et $\sum W<0$ : le cycle \textbf{fournit} du travail,
+c'est un \textbf{cycle moteur}. \checkmark
+\end{verif}
+
+\textbf{d)} La chaleur \emph{payée} est celle reçue, soit $Q_{AB}+Q_{BC}=38\,660$ J :
+\eqb{\eta=\frac{|\sum W|}{Q_{fourni}}=\frac{4988}{38\,660}=\mathbf{12{,}9\ \%}}
+
+\subsection{A3 --- Cycle de Carnot}
+
+\textbf{a)} $\eta=1-\dfrac{T_2}{T_1}=1-\dfrac{300}{500}=\mathbf{40\ \%}$
+
+\textbf{b)} B$\to$C est isotherme à 500 K, donc $\Delta U=0$ et $Q=-W$ :
+\[Q_1=nRT_1\ln\frac{V_C}{V_B}=8{,}314\times500\times\ln 3=4157\times1{,}0986=\mathbf{+4567\ \text{J}}\]
+
+\textbf{c)} $|W|=\eta\,Q_1=0{,}4\times4567=1827$ J, et comme le cycle est moteur
+$\boxed{W=-1827\ \text{J}}$. Puis par le bilan $Q_1+Q_2+W=0$ :
+\[Q_2=-Q_1-W=-4567+1827=\mathbf{-2740\ \text{J}}\]
+
+\textbf{d)} $\eta=1+\dfrac{Q_2}{Q_1}=1-\dfrac{2740}{4567}=1-0{,}600=\mathbf{40\ \%}$ \checkmark
+\emph{(les deux chemins concordent)}
+
+\textbf{e)} Sur l'adiabatique A$\to$B : $T_AV_A^{\gamma-1}=T_BV_B^{\gamma-1}$ avec $T_A=300$ K
+et $T_B=500$ K :
+\[V_A=V_B\left(\frac{T_B}{T_A}\right)^{\frac{1}{\gamma-1}}
+=10\times\left(\frac{500}{300}\right)^{2,5}=10\times3{,}586=\mathbf{35{,}9\ \text{L}}\]
+\[V_D=V_C\times3{,}586=30\times3{,}586=\mathbf{107{,}6\ \text{L}}\]
+\begin{verif}
+$\dfrac{V_A}{V_D}=\dfrac{35{,}9}{107{,}6}=0{,}333$ \; et \; $\dfrac{V_B}{V_C}=\dfrac{10}{30}=0{,}333$
+\checkmark \; C'est exactement l'égalité qui fait disparaître les logarithmes dans la
+démonstration du rendement de Carnot.
+\end{verif}
+
+\subsection{B1 --- Les points du cycle}
+
+\textbf{a)} $V_B-V_A=500$ cm$^3$ et $V_B/V_A=9$, donc $8V_A=500$ :
+\eqb{V_A=V_C=62{,}5\ \text{cm}^3 \qquad V_B=V_E=562{,}5\ \text{cm}^3}
+
+\textbf{b)} $T_B=298{,}15$ K, $p_B=10^5$ Pa :
+\[n=\frac{p_BV_B}{RT_B}=\frac{10^5\times562{,}5\cdot10^{-6}}{8{,}314\times298{,}15}
+=\mathbf{0{,}02269\ \text{mol}}\]
+
+\textbf{c)} $9^{0,4}=2{,}408$ et $9^{1,4}=21{,}67$ :
+\[T_C=298{,}15\times2{,}408=\mathbf{718{,}0\ \text{K}}\qquad p_C=\mathbf{21{,}67\ \text{bar}}\]
+
+\textbf{d)} $\eta_{th}=1-\varepsilon^{1-\gamma}=1-9^{-0,4}=1-0{,}4152=\mathbf{58{,}5\ \%}$
+
+\subsection{B2 --- La combustion}
+
+\textbf{a)} $CH_{1,85}+1{,}4625\,O_2\to CO_2+0{,}925\,H_2O$, puis
+\[n_{air}=\frac{1{,}4625}{0{,}21}\times1{,}15=6{,}964\times1{,}15=\mathbf{8{,}009}\
+\text{mol d'air / mol de carburant}\]
+
+\textbf{b)} Le cylindre contient le mélange air $+$ carburant :
+\[n_{carb}=\frac{0{,}02269}{8{,}009+1}=2{,}519\cdot10^{-3}\ \text{mol}\]
+\[m_{carb}=2{,}519\cdot10^{-3}\times13{,}85=\mathbf{34{,}9\ \text{mg}}
+\quad (M_{CH_{1,85}}=12+1{,}85=13{,}85\ \text{g/mol})\]
+
+\textbf{c)} $Q_{CD}=m_{carb}\cdot PCI=3{,}489\cdot10^{-5}\times43{,}5\cdot10^{6}
+=\mathbf{1518\ \text{J}}$
+
+\textbf{d)} $nC_v=0{,}02269\times20{,}785=0{,}4717$ J/K. Combustion \textbf{isochore} :
+\[T_D=T_C+\frac{Q_{CD}}{nC_v}=718{,}0+\frac{1518}{0{,}4717}=718{,}0+3218=\mathbf{3935\ \text{K}}\]
+\[p_D=p_C\frac{T_D}{T_C}=21{,}67\times\frac{3935}{718}=\mathbf{118{,}8\ \text{bar}}\]
+\[T_E=T_D\,\varepsilon^{1-\gamma}=3935\times0{,}4152=\mathbf{1634\ \text{K}}
+\qquad p_E=\frac{nRT_E}{V_B}=\mathbf{5{,}48\ \text{bar}}\]
+
+\subsection{B3 --- La puissance}
+
+\textbf{a)} $|W_{th}|=\eta_{th}\,Q_{CD}=0{,}5848\times1518=\mathbf{887\ \text{J}}$, puis
+\[887\xrightarrow{\times0,72}|W_{ind}|=\mathbf{639\ \text{J}}
+\xrightarrow{\times0,85}|W_{disp}|=\mathbf{543\ \text{J}}\]
+
+\textbf{b)} 4 temps, donc 1 cycle $=$ 2 tours :
+\eqb{P_{eff}=\frac{N}{2\cdot60}\,|W_{disp}|\,z=\frac{4500}{120}\times543\times4
+=\mathbf{81{,}5\ \text{kW}}}
+
+\textbf{c)} $\eta_{eff}=0{,}5848\times0{,}72\times0{,}85=\mathbf{35{,}8\ \%}$
+\begin{verif}
+Ordres de grandeur : $\eta_{eff}\approx36\%$ pour un moteur essence, et $81{,}5$ kW pour 2 L
+de cylindrée $\approx40$ kW/L : c'est réaliste. \checkmark
+\end{verif}
+
+\subsection{C1 --- Machine frigorifique}
+
+\textbf{a)} Détente isenthalpique $\Rightarrow \boxed{h_4=h_3=252\ \text{kJ/kg}}$
+\[w=h_2-h_1=430-396=\mathbf{+34}\qquad
+q_1=h_3-h_2=252-430=\mathbf{-178}\qquad
+q_2=h_1-h_4=\mathbf{+144}\ \text{kJ/kg}\]
+\begin{verif}
+$-178+144+34=0$ \checkmark \quad Signes cohérents : $w>0$ (on paie), $q_1<0$ (cédé au chaud),
+$q_2>0$ (pris au froid).
+\end{verif}
+
+\textbf{b)} C'est un \textbf{frigo} : l'utile est la chaleur prise au froid.
+\eqb{PSN=\frac{q_2}{w}=\frac{144}{34}=\mathbf{4{,}24}}
+
+\textbf{c)} C'est l'\textbf{évaporateur} qui produit les 8 kW :
+\[\dot m=\frac{P_{utile}}{q_2}=\frac{8}{144}=\mathbf{0{,}0556\ \text{kg/s}}\]
+
+\textbf{d)} $P_{comp}=\dot m\,w=0{,}0556\times34=\mathbf{1{,}89\ \text{kW}}$ et
+$P_{cond}=\dot m\,|q_1|=0{,}0556\times178=\mathbf{9{,}89\ \text{kW}}$.
+\begin{verif}
+$8+1{,}89=9{,}89$ kW \checkmark : le condenseur évacue le froid pris \emph{plus} le travail payé.
+\end{verif}
+
+\subsection{C2 --- Pompe à chaleur avec compresseur réel}
+
+\textbf{a)} \[h_2=h_1+\frac{h_{2s}-h_1}{\eta_{isos}}=399+\frac{433-399}{0{,}72}
+=399+47{,}22=\mathbf{446{,}2\ \text{kJ/kg}}\]
+
+\textbf{b)} \[w=\mathbf{+47{,}2}\qquad q_1=260-446{,}2=\mathbf{-186{,}2}\qquad
+q_2=399-260=\mathbf{+139{,}0}\ \text{kJ/kg}\]
+\begin{verif}$-186{,}2+139{,}0+47{,}2=0$ \checkmark\end{verif}
+
+\textbf{c)} C'est une \textbf{PAC} : l'utile est la chaleur cédée au chaud.
+\eqb{COP=\frac{-q_1}{w}=\frac{186{,}2}{47{,}2}=\mathbf{3{,}94}}
+
+\textbf{d)} Températures des \textbf{sources}, en kelvins : $T_1=315{,}15$ K, $T_2=263{,}15$ K.
+\[COP_{max}=\frac{T_1}{T_1-T_2}=\frac{315{,}15}{52}=\mathbf{6{,}06}\]
+\begin{verif}
+$3{,}94<6{,}06$ \checkmark, soit $65\%$ du maximum théorique : parfaitement crédible pour une
+machine réelle avec un compresseur à $72\%$.
+\end{verif}
+
+\subsection{C3 --- La même PAC sur un circuit de chauffage}
+
+\textbf{a)} C'est le \textbf{condenseur} qui fournit les 15 kW :
+\[\dot m=\frac{P}{|q_1|}=\frac{15}{186{,}2}=\mathbf{0{,}0806\ \text{kg/s}}\]
+
+\textbf{b)} $P_{comp}=\dot m\,w=0{,}0806\times47{,}2=\mathbf{3{,}80\ \text{kW}}$
+
+\textbf{c)} $P_{\text{\'evap}}=\dot m\,q_2=0{,}0806\times139{,}0=11{,}20$ kW.
+\begin{verif}
+$3{,}80+11{,}20=15{,}0$ kW \checkmark : les 15 kW livrés à la maison $=$ 11,2 kW pris
+gratuitement à l'air extérieur $+$ 3,8 kW d'électricité payée. C'est tout l'intérêt d'une PAC.
+\end{verif}
+
+\textbf{d)} Circuit d'eau, sans changement d'état :
+\[\dot m_{eau}=\frac{P}{c\,\Delta T}=\frac{15\,000}{4185\times7}
+=\mathbf{0{,}512\ \text{kg/s}}\approx\mathbf{1{,}84\ \text{m}^3/\text{h}}\]
+
+\end{document}

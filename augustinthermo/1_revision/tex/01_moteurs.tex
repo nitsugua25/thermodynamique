@@ -1,0 +1,153 @@
+\section{Fiche : moteurs à combustion (essence, diesel, 2 temps)}
+
+\subsection{Les 3 cycles -- vue d'ensemble}
+
+Dans les trois cas, le cycle réel du cylindre (fermé, gaz emprisonné) est le même \textbf{cycle utile}
+B-C-D-E-B ; les temps d'admission (A-B) et d'échappement (B-A), tous deux isobares à $p_{atm}$, s'annulent
+en travail net et ne comptent pas dans le rendement. Seule la nature de la combustion (isochore ou isobare)
+change.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{2.5cm} *{3}{>{\raggedright\arraybackslash}X}@{}}
+\toprule
+& \textbf{Essence (B. de Rochas)} & \textbf{Diesel} & \textbf{2 temps} \\
+\midrule
+Admission A-B & isobare (air+essence) & isobare (air seul) & isobare (via lumières) \\
+Compression B-C & adiabatique rév. & adiabatique rév. ($\varepsilon$ plus grand) & adiabatique rév. \\
+Combustion C-D & \textbf{isochore} (explosion, bougie) & \textbf{isobare} (injection + auto-inflammation) &
+isochore \\
+Détente D-E & adiabatique rév. & adiabatique rév. & adiabatique rév. \\
+Échappement E-B puis B-A & isochore puis isobare & isochore puis isobare & isochore/isobare via lumières \\
+$\varepsilon=V_B/V_A=V_B/V_C$ & $8<\varepsilon<10$ & $16<\varepsilon<20$ & variable \\
+Tours moteur / cycle & 2 tours & 2 tours & \textbf{1 tour} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85, >=Stealth]
+% --- Essence ---
+\begin{scope}
+\draw[->] (0,0) -- (5.2,0) node[right] {$V$};
+\draw[->] (0,0) -- (0,5.4) node[above] {$p$};
+\coordinate (A) at (1,1); \coordinate (B) at (4,1);
+\coordinate (C) at (1,3); \coordinate (D) at (1,5);
+\coordinate (E) at (4,2.3);
+\draw[thick] (A) -- (B) node[midway,below]{isobare};
+\draw[thick] (B) to[out=110,in=-40] (C);
+\draw[thick] (C) -- (D) node[midway,left]{isochore};
+\draw[thick] (D) to[out=-20,in=140] (E);
+\draw[thick] (E) -- (B) node[midway,right]{isochore};
+\draw[thick,dashed] (B) -- (A) ;
+\foreach \p/\lab/\pos in {A/A/below left,B/B/below right,C/C/above left,D/D/above left,E/E/right}
+  {\fill (\p) circle (1.3pt) node[\pos] {\lab};}
+\node at (2.5,5.3) {\small\bfseries Essence};
+\end{scope}
+% --- Diesel ---
+\begin{scope}[xshift=6.2cm]
+\draw[->] (0,0) -- (5.2,0) node[right] {$V$};
+\draw[->] (0,0) -- (0,5.4) node[above] {$p$};
+\coordinate (A) at (1,1); \coordinate (B) at (4,1);
+\coordinate (C) at (1,4); \coordinate (D) at (2.1,4);
+\coordinate (E) at (4,1.9);
+\draw[thick] (A) -- (B) node[midway,below]{isobare};
+\draw[thick] (B) to[out=110,in=-40] (C);
+\draw[thick] (C) -- (D) node[midway,above]{isobare};
+\draw[thick] (D) to[out=-30,in=150] (E);
+\draw[thick] (E) -- (B) node[midway,right]{isochore};
+\draw[thick,dashed] (B) -- (A);
+\foreach \p/\lab/\pos in {A/A/below left,B/B/below right,C/C/above left,D/D/above right,E/E/right}
+  {\fill (\p) circle (1.3pt) node[\pos] {\lab};}
+\node at (2.5,5.3) {\small\bfseries Diesel};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{piege}
+Le rendement \textbf{théorique} d'un moteur ne dépend \emph{jamais} du carburant ni de la puissance : il ne
+dépend que de la \textbf{géométrie} ($\varepsilon$, et $\rho$ pour le diesel) et de $\gamma$. C'est souvent
+la première sous-question et elle se résout \textbf{sans aucune donnée sur la combustion}.
+\end{piege}
+
+\subsection{Formules essentielles}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\toprule
+Rapport volumétrique & $\varepsilon = \dfrac{V_B}{V_A}=\dfrac{V_B}{V_C}$ \\
+Rapport de combustion (diesel) & $\rho = \dfrac{V_D}{V_C}$ \\
+$\eta_{\text{théo}}$ essence & $\eta_{\text{théo}}=1-\varepsilon^{1-\gamma}$ \\
+$\eta_{\text{théo}}$ diesel & $\eta_{\text{théo}}=1+\dfrac{\varepsilon^{1-\gamma}-\varepsilon^{1-\gamma}\rho^\gamma}
+{\gamma(\rho-1)}$ \\
+Chaleur apportée & $Q_{CD}=m_{carburant}\cdot PCI$ (isochore essence : $Q_{CD}=nC_v(T_D-T_C)$ ; isobare
+diesel : $Q_{CD}=nC_p(T_D-T_C)$) \\
+Rendements en cascade & $\eta_{eff}=\eta_{\text{théo}}\cdot\eta_{f}\cdot\eta_{\text{méca}}=\dfrac{|W_{disponible}|}{Q_{CD}}$ \\
+Puissance (4 temps, $z$ cylindres) & $P=\dfrac{N}{2\cdot 60}\cdot W\cdot z$ \quad ($N$ en tr/min, 1 cycle =
+2 tours) \\
+Puissance (2 temps) & $P=\dfrac{N}{60}\cdot W\cdot z$ \quad (1 cycle = 1 tour) \\
+Pression moyenne indiquée & $W_{réel}=pmi\cdot(V_A-V_B)=pmi\cdot\pi r^2 x$ ($x$=course), $pmi=p_M-p_{atm}$ \\
+Combustion hydrocarbure & $C_xH_y+\left(x+\dfrac{y}{4}\right)O_2 \to xCO_2+\dfrac{y}{2}H_2O$ +chaleur \\
+Excès d'air & $\lambda=\dfrac{\text{air réellement aspiré}}{\text{air stœchiométrique}}$ (essence
+$\lambda\approx 1$, diesel souvent $\lambda>1$) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{piege}
+Ne confondez pas $V_A$ et $V_C$ : $V_A$ (avant admission) $=V_C$ (fin de compression) $=$ volume mort
+(point mort haut, PMH). $V_B$ (fin d'admission) $=$ point mort bas (PMB). La cylindrée $=V_B-V_A$.
+\end{piege}
+
+\newpage
+\subsection{Exemple complet résolu -- moteur essence 4 cylindres}
+
+\begin{enonce}
+Moteur essence 4 temps, 4 cylindres, cylindrée totale $1{,}2$ L ($0{,}3$ L/cylindre). Rapport volumétrique
+$\varepsilon=10$. Puissance effective $P_{eff}=20$ kW. Air aspiré : $16\,^\circ\text{C}$, $1$ bar, gaz
+parfait, $\gamma=1{,}4$, $21\%$ O$_2$ en volume. Carburant simplifié CH$_{1,8}$, excès d'air
+$\lambda=1{,}2$, PCI $=42500$ kJ/kg. $\eta_{\text{méca}}=0{,}8$, $\eta_{forme}=0{,}75$.
+
+\emph{Trouver : $T,p,V$ en chaque point, le rendement théorique, et la vitesse de rotation du moteur.}
+\end{enonce}
+
+\begin{correction}
+\textbf{1) Tableau des volumes.} Cylindrée $=V_B-V_A=300\text{ cm}^3$ et $\varepsilon=V_B/V_A=10$
+$\Rightarrow 9V_A=300 \Rightarrow V_A=V_C=33{,}3\text{ cm}^3$, \ $V_B=333{,}3\text{ cm}^3$.
+
+\textbf{2) Point B} (fin d'admission = air ambiant) : $T_B=289{,}15$ K, $p_B=1$ bar.
+
+\textbf{3) Compression B$\to$C (adiabatique réversible)} :
+\[T_C=T_B\,\varepsilon^{\gamma-1}=289{,}15\cdot 10^{0{,}4}=726{,}3\text{ K}\qquad
+p_C=p_B\,\varepsilon^{\gamma}=10^{1{,}4}=25{,}1\text{ bar}\]
+
+\textbf{4) Rendement théorique} (ne dépend que de $\varepsilon,\gamma$) :
+\eqbox{\eta_{\text{théo}}=1-\varepsilon^{1-\gamma}=1-10^{-0{,}4}=1-0{,}3981=0{,}6019=\mathbf{60{,}2\%}}
+
+\textbf{5) Masse de carburant par cycle et par cylindre.} Réaction : $CH_{1,8}+1{,}45\,O_2 \to CO_2+0{,}9H_2O$,
+donc $1{,}45$ mol O$_2$/mol carburant, soit $\dfrac{1{,}45}{0{,}21}=6{,}905$ mol air stœchiométrique par mol
+carburant. Avec $\lambda=1{,}2$ : $6{,}905\times 1{,}2=8{,}29$ mol air réel / mol carburant.
+
+Moles totales dans le cylindre en B (mélange air+carburant, gaz parfait) :
+\[n_{mix}=\frac{p_BV_B}{RT_B}=\frac{10^5\times 333{,}3\times10^{-6}}{8{,}314\times 289{,}15}=0{,}01386\text{ mol}\]
+Avec $n_{mix}=n_{carb}(8{,}29+1)$ : $n_{carb}=1{,}49\times10^{-3}$ mol $\Rightarrow$
+$m_{carb}=n_{carb}\times M_{CH_{1,8}}=1{,}49\times10^{-3}\times13{,}8=2{,}06\times10^{-5}$ kg.
+
+\textbf{6) Chaleur et travaux (par cylindre, par cycle).}
+\[Q_{CD}=m_{carb}\cdot PCI = 2{,}061\times10^{-5}\times 42{,}5\times10^{6}=875{,}8\text{ J}\]
+\[|W_{\text{théo}}|=\eta_{\text{théo}}\cdot Q_{CD}=0{,}6019\times875{,}8=527{,}1\text{ J}\]
+\[|W_{\text{indiqué}}|=\eta_f\cdot|W_{\text{théo}}|=0{,}75\times527{,}1=395{,}4\text{ J} \qquad
+|W_{disponible}|=\eta_{\text{méca}}\cdot|W_{\text{indiqué}}|=0{,}8\times395{,}4=316{,}3\text{ J}\]
+
+\textbf{7) Vitesse de rotation.} $P_{eff}=\dfrac{N}{2\cdot 60}\cdot|W_{disponible}|\cdot z$ avec $z=4$ :
+\eqbox{N=\frac{P_{eff}\cdot 120}{|W_{disponible}|\cdot z}=\frac{20\,000\times120}{316{,}3\times4}
+= \mathbf{1897\ \text{tr/min}}}
+
+\emph{(Le corrigé du cours annonce 1881 tr/min : l'écart de $0{,}8\ \%$ vient de ses arrondis
+intermédiaires. Le calcul ci-dessus boucle exactement, cf. la vérification $\sum Q+\sum W=0$.)}
+
+\emph{(Le tableau complet $T_D,p_D,T_E,p_E$ s'obtient ensuite : $T_D$ via $Q_{CD}=nC_v(T_D-T_C)$ à $V$
+constant avec $n=n_{mix}$, puis $D\to E$ adiabatique jusqu'à $V_E=V_B$, exactement comme à l'étape 3.)}
+\end{correction}

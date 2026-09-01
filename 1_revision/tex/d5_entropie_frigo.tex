@@ -1,0 +1,156 @@
+\section{Entropie : théorème de Carnot généralisé, réversible/irréversible (diapos 189-192)}
+
+\begin{objectif}
+\textbf{Objectif :} généraliser à un nombre quelconque de sources ce qu'on a vu avec Carnot (2 sources), et
+définir une grandeur -- l'entropie -- qui permet de savoir si une transformation est possible et si elle est
+réversible ou non.
+\end{objectif}
+
+\subsection*{Théorème de Carnot généralisé (diapo 189)}
+\begin{demotable}
+Cas réversible : $\displaystyle\sum\frac{Q_i}{T_i}=0 \Rightarrow \int\frac{dQ}{T_{sources}}=0$ &
+En généralisant le résultat de Carnot (2 sources, $Q_1/T_1+Q_2/T_2=0$ à la limite réversible) à un nombre
+quelconque $n$ de sources. \\
+Cas irréversible : $\displaystyle\sum\frac{Q_i}{T_i}<0 \Rightarrow \int\frac{dQ}{T_{sources}}<0$ &
+En irréversible, cette somme n'est plus nulle mais toujours \textbf{négative} (jamais positive). \\
+\end{demotable}
+
+\subsection*{Notion d'entropie -- cas réversible (diapo 190)}
+\begin{demotable}
+Deux chemins réversibles I et II entre A et B : $\displaystyle\int_I\frac{dQ}{T}-\int_{II}\frac{dQ}{T}=0$ &
+On applique le théorème ci-dessus au cycle fermé formé par l'aller (I) et le retour (II), tous deux
+réversibles $\Rightarrow$ la somme totale vaut $0$. \\
+$\displaystyle\int_I\frac{dQ}{T}=\int_{II}\frac{dQ}{T}=\boxed{\Delta S}$ &
+Cette quantité est donc \textbf{la même quel que soit le chemin réversible suivi} entre A et B : c'est une
+fonction d'état, qu'on appelle l'\textbf{entropie} $S$, échangée entre le système et l'extérieur. \\
+\end{demotable}
+
+\subsection*{Cas où I est réversible et II irréversible (diapo 191)}
+\begin{demotable}
+$\displaystyle\int_I\frac{dQ}{T}-\int_{II}\frac{dQ}{T}<0$ &
+Même raisonnement, mais le cycle contient maintenant une partie irréversible (II) : le théorème de Carnot
+donne cette fois une inégalité stricte. \\
+$\displaystyle\int_I\frac{dQ}{T}<\int_{II}\frac{dQ}{T}<\Delta S_{irrev}$ &
+On note $\Delta S_{irrev}=\int_{II}dQ/T$ le long du chemin irréversible : il est \textbf{plus grand} que
+l'intégrale réversible. \\
+$\displaystyle\int_I\frac{dQ}{T}+\Delta S_i=\Delta S_{irrev}$, où $\Delta S_i>0$ &
+On introduit $\Delta S_i$, l'\textbf{entropie créée} par les irréversibilités (frottements, pertes...),
+pour transformer l'inégalité en égalité. \\
+\end{demotable}
+
+\begin{retenir}
+\textbf{Système isolé} ($dQ=0$, aucun échange avec l'extérieur) : l'entropie \textbf{reste constante} si la
+transformation est réversible, et \textbf{augmente} si elle est irréversible ($\Delta S_i>0$ toujours). C'est
+le sens physique du second principe : l'univers évolue toujours vers plus de désordre
+($S=k_b\ln\Omega$, $\Omega$ = nombre d'états microscopiques possibles).
+\end{retenir}
+
+\subsection*{Calculer une variation d'entropie en pratique (diapo 194)}
+
+Pour une transformation \textbf{réversible}, on part de $\displaystyle\Delta S=\int\frac{dQ}{T}$ et on
+remplace $dQ$ selon le type de transformation :
+
+\begin{demotable}
+\textbf{À pression constante} : $dQ=nC_p\,dT$, donc
+$\Delta S=\displaystyle\int\frac{nC_p\,dT}{T}=\boxed{nC_p\ln\!\left(\frac{T_2}{T_1}\right)}$ &
+On injecte $dQ=nC_p\,dT$ (isobare) dans l'intégrale ; $\int\frac{dT}{T}=\ln T$, d'où le logarithme du
+rapport des températures. \\
+\textbf{À volume constant} : $dQ=nC_v\,dT$, donc
+$\Delta S=\boxed{nC_v\ln\!\left(\frac{T_2}{T_1}\right)}$ &
+Même calcul, mais avec $C_v$ puisque la transformation est isochore. \\
+\textbf{À température constante} : $\Delta U=0$ donc $Q=-W$, et $T$ sort de l'intégrale :
+$\Delta S=\dfrac{1}{T}\displaystyle\int -dW=\boxed{nR\ln\!\left(\frac{V_2}{V_1}\right)}$ &
+Sur une isotherme, $T$ étant constante on peut la sortir de $\int\frac{dQ}{T}$ ; il reste
+$\frac{Q}{T}$, et $Q=-W=nRT\ln\frac{V_2}{V_1}$ (travail isotherme, section 1). \\
+\textbf{Adiabatique réversible} : $dQ=0$ donc $\boxed{\Delta S=0}$ &
+C'est pour cela qu'on l'appelle aussi \textbf{isentropique} : pas de chaleur échangée \emph{et} pas
+d'irréversibilité $\Rightarrow$ l'entropie ne bouge pas. \\
+\end{demotable}
+
+\begin{retenir}
+\textbf{Sur un cycle complet, $\Delta S=0$} (l'entropie est une fonction d'état, on revient au point de
+départ) : c'est une vérification supplémentaire, au même titre que $\Delta U=0$. Attention, cela ne veut
+pas dire que l'entropie \emph{créée} $\Delta S_i$ est nulle : si le cycle est irréversible, il en a été
+créé, mais elle a été évacuée vers l'extérieur avec la chaleur.
+\end{retenir}
+
+\newpage
+\section{Machine frigorifique : schéma et diagramme $\log p$-$h$ (diapos 251-256)}
+
+\textbf{Principe :} un frigo/PAC est un \textbf{cycle récepteur} à deux sources (il faut fournir un travail
+$W>0$). La vapeur passe dans un compresseur (p et T augmentent), puis dans un condenseur au contact de la
+source chaude (elle cède de la chaleur et se liquéfie), puis dans une soupape de détente (p et T chutent),
+puis dans un évaporateur au contact de la source froide (elle reçoit de la chaleur et se vaporise).
+
+\begin{demotable}
+$1\to2$ : \textbf{compression isentropique} &
+La vapeur passe dans le compresseur ; si $p$ augmente, $T$ augmente aussi. Réversible $\Rightarrow$ entropie
+constante. \\
+$2\to3$ : \textbf{condensation isobare}, dans le condenseur, au contact de la source chaude &
+La vapeur comprimée est plus chaude que la source chaude : elle lui cède de l'énergie et se condense (le
+système donne $Q_1<0$). \\
+$3\to4$ : passage dans la \textbf{soupape de détente}, à \textbf{enthalpie constante} &
+Aucune pièce mobile n'échange de travail utile ($W_{ut}=0$) et la détente est trop rapide pour échanger de
+la chaleur ($Q=0$) $\Rightarrow$ d'après le 1\textsuperscript{er} principe en machine ouverte
+($\Delta H=W_{ut}+Q$), on a $\Delta H=0$. \\
+$4\to1$ : \textbf{évaporation isobare}, dans l'évaporateur, au contact de la source froide &
+Le liquide (froid, basse pression) est plus froid que la source froide : il peut donc en recevoir de la
+chaleur $Q_2>0$ et s'évaporer. \\
+\end{demotable}
+
+\textbf{Le diagramme des frigoristes $(\log p,h)$} : les fluides utilisés sont \textbf{organiques} (liaisons
+covalentes, plus fortes que les liaisons ioniques $\Rightarrow$ plus d'énergie de vaporisation nécessaire,
+cloche de saturation plus large). On place les 4 points \textbf{réels} $1',2',3',4'$ avec une
+\textbf{surchauffe} ($\sim5\,^\circ$C au-dessus de $T_{\text{évap}}$ en 1') pour garantir un gaz sec, et un
+\textbf{sous-refroidissement} ($\sim5\,^\circ$C sous $T_{cond}$ en 3') pour garantir du liquide pur -- cela
+limite les irréversibilités.
+
+\begin{retenir}
+Pour $1\to2$ réel (non isentropique), le rendement isentropique du compresseur relie le point idéal
+(isentropique) au point réel : $\displaystyle\eta_{isos}=\frac{h_{2\,\text{isos}}-h_1}{h_{2\,\text{réel}}-h_1}$. $T_{2'}$
+et $T_{3'}$ doivent rester \textbf{au-dessus} de la température de la source chaude (sinon pas d'échange de
+chaleur possible vers elle) ; $T_{1'}$ et $T_{4'}$ doivent rester \textbf{en dessous} de celle de la source
+froide.
+\end{retenir}
+
+\section{PSN, COP, rendement de Carnot pour un frigo/PAC (diapos 257-263)}
+
+\begin{demotable}
+Frigo : $\boxed{PSN=\dfrac{Q_2}{W}}$ &
+L'énergie «utile» d'un frigo, c'est la chaleur \textbf{prise} à la source froide (l'intérieur du
+frigo). On la rapporte au travail qu'il a fallu fournir. \\
+PAC : $\boxed{COP=\dfrac{-Q_1}{W}}$ &
+Pour une pompe à chaleur, l'énergie utile est la chaleur \textbf{cédée} à la source chaude (l'intérieur de
+la maison) ; $Q_1<0$ donc on met un signe $-$ pour que le $COP$ soit positif. \\
+\end{demotable}
+
+\subsection*{Démonstration de $PSN_{max}$ et $COP_{max}$ (cycle réversible)}
+\begin{demotable}
+$Q_1+Q_2+W=\Delta U=0$ (bilan sur un cycle) &
+Comme pour tout cycle fermé, l'énergie interne revient à sa valeur de départ : la somme de tout ce qui
+entre/sort vaut $0$. \\
+Si le cycle est réversible : $\dfrac{Q_1}{T_1}+\dfrac{Q_2}{T_2}=\Delta S=0 \Rightarrow
+\boxed{\dfrac{Q_1}{Q_2}=-\dfrac{T_1}{T_2}}$ &
+On applique le résultat de la section «entropie» : à la limite réversible, l'entropie totale
+échangée avec les 2 sources est nulle. \\
+$PSN_{max}=\dfrac{Q_2}{-Q_1-Q_2}=\dfrac{1}{-(Q_1/Q_2)-1}=\dfrac{1}{(T_1/T_2)-1}$ &
+On remplace $W=-Q_1-Q_2$ (issu du bilan) dans $PSN=Q_2/W$, on divise haut et bas par $Q_2$, puis on
+substitue le rapport $Q_1/Q_2=-T_1/T_2$ trouvé juste avant. \\
+$\boxed{PSN_{max}=\dfrac{T_2}{T_1-T_2}}$ &
+On multiplie haut et bas par $T_2$ pour simplifier la fraction. \\
+\midrule
+$COP_{max}=\dfrac{-Q_1}{-Q_1-Q_2}=\dfrac{1}{(Q_2/Q_1)+1}=\dfrac{1}{(-T_2/T_1)+1}$ &
+Même méthode pour la PAC : on remplace $W=-Q_1-Q_2$ dans $COP=-Q_1/W$, on divise haut et bas par $Q_1$ cette
+fois, puis on substitue $Q_2/Q_1=-T_2/T_1$ (inverse de la relation précédente). \\
+$\boxed{COP_{max}=\dfrac{T_1}{T_1-T_2}}$ &
+On multiplie haut et bas par $T_1$. Notez que $COP_{max}=PSN_{max}+1$ : logique, car $COP$ compte
+\emph{toute} l'énergie cédée à la source chaude (chaleur prise au froid \emph{plus} le travail fourni),
+alors que $PSN$ ne compte que la chaleur prise au froid. \\
+\end{demotable}
+
+\begin{retenir}
+$T_1$ et $T_2$ dans ces formules sont les \textbf{températures des sources réelles} (air extérieur, air
+ambiant, eau du circuit...), en \textbf{Kelvin} -- pas les températures d'évaporation/condensation du fluide
+frigorigène (qui sont décalées à cause de l'écart d'échange). Ces bornes $PSN_{max}$/$COP_{max}$ ne sont
+jamais atteintes en pratique (compression non isentropique, surchauffe, sous-refroidissement...).
+\end{retenir}

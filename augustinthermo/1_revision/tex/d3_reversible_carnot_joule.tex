@@ -1,0 +1,159 @@
+\section{Réversible vs irréversible : ce qui se passe, et calcul de $Q$ et $W$ (diapos 91-93)}
+
+\begin{objectif}
+\textbf{Objectif :} montrer qu'une transformation \textbf{irréversible} coûte toujours \textbf{plus de
+travail} pour obtenir \textbf{moins de chaleur} qu'une transformation réversible entre les deux mêmes états.
+C'est la base de tous les rendements du cours (rien n'est jamais parfait).
+\end{objectif}
+
+\textbf{Rappel (transformation fermée monotherme, diapo 91) :} le second principe impose $\Delta W\geq0$.
+Si la transformation est réversible, la seule possibilité est $\Delta W=0$ et $\Delta Q=0$ ; si elle est
+irréversible, la seule possibilité est $\Delta W>0$ et $\Delta Q<0$ (il faut fournir du travail net et on
+perd de la chaleur).
+
+\subsection*{Cas de deux transformations réversibles I et II (diapo 92)}
+\begin{demotable}
+On observe la transformation totale $I+(-II)$ (aller par I, revenir par II en sens inverse) &
+C'est un \textbf{cycle fermé monotherme réversible} (composé de deux morceaux réversibles). \\
+$W_{tot}=0=W_I+W_{-II}=0 \Rightarrow \boxed{W_I=W_{II}}$ &
+D'après le rappel ci-dessus, un cycle fermé monotherme réversible a $\Delta W=0$. Donc les deux chemins
+réversibles I et II demandent exactement le \textbf{même travail}. \\
+$W_I+Q_I=W_{II}+Q_{II}=\Delta U \Rightarrow \boxed{Q_I=Q_{II}}$ &
+Comme $W_I=W_{II}$, l'égalité $\Delta U=W+Q$ (même $\Delta U$ car même trajet A$\to$B) impose aussi
+$Q_I=Q_{II}$. \\
+\end{demotable}
+
+\subsection*{Cas où I est irréversible et II reste réversible (diapo 93)}
+\begin{demotable}
+$W_{tot}>0 \Rightarrow W_I+W_{-II}>0 \Rightarrow \boxed{W_I>W_{II}}$ &
+Cette fois le cycle total $I+(-II)$ contient une partie irréversible, donc $\Delta W>0$ (rappel plus haut) :
+le travail du chemin irréversible I est \textbf{plus grand} que celui du chemin réversible II. \\
+$\boxed{W_{\text{irréversible}}>W_{\text{réversible}}}$ et donc $\boxed{Q_{\text{irréversible}}<Q_{\text{réversible}}}$ &
+Puisque $\Delta U$ est le même (mêmes points de départ/arrivée) et que $W+Q=\Delta U$ est fixe, si $W$
+augmente alors $Q$ doit diminuer d'autant. \\
+\end{demotable}
+
+\begin{retenir}
+\textbf{Ce qu'il se passe physiquement :} en irréversible, une partie de l'énergie fournie est «gaspillée» (frottements, pertes de charge, combustion non instantanée...). Il faut donc \textbf{fournir un
+travail plus important} pour obtenir, au final, \textbf{une quantité de chaleur plus petite} que si la
+même transformation avait pu se faire de façon réversible. C'est exactement ce qui justifie les rendements
+$\eta_f$, $\eta_{\text{méca}}$ du cours sur les moteurs, et les $\eta_{isos}$ des compresseurs frigo.
+\end{retenir}
+
+\newpage
+\section{Cycle de Carnot : courbes utilisées et démonstration du rendement (diapos 103-108)}
+
+\begin{objectif}
+\textbf{Objectif :} calculer le meilleur rendement \textbf{possible} pour un moteur thermique fonctionnant
+entre deux sources de chaleur -- c'est la limite théorique absolue, jamais atteinte en pratique.
+\end{objectif}
+
+\textbf{Les 4 courbes du cycle de Carnot} (les deux seules formes de transformation qui n'engendrent
+\textbf{aucune irréversibilité}) :
+\begin{itemize}[leftmargin=1.4em]
+\item A$\to$B : \textbf{compression adiabatique réversible} ($Q=0$, $W>0$)
+\item B$\to$C : \textbf{détente isotherme réversible} ($Q>0$, $W<0$) -- la source chaude $T_1$ fournit $Q_1$
+\item C$\to$D : \textbf{détente adiabatique réversible} ($Q=0$, $W<0$)
+\item D$\to$A : \textbf{compression isotherme réversible} ($Q<0$, $W>0$) -- la source froide $T_2$ reçoit
+$Q_2$
+\end{itemize}
+\emph{En mots :} on comprime et détend le gaz sans jamais échanger de chaleur pendant les phases rapides
+(adiabatiques), et on échange toute la chaleur pendant les phases lentes à température constante
+(isothermes) -- c'est ce qui rend le cycle totalement réversible.
+
+\begin{demotable}
+$\eta=\dfrac{\text{énergie utile}}{\text{énergie fournie}}=\dfrac{|W_{tot}|}{Q_1}=\dfrac{|-Q_1-Q_2|}{Q_1}$ &
+Le rendement, c'est toujours ce qu'on récupère (le travail net) divisé par ce qu'on a dû payer
+(la chaleur $Q_1$ fournie par la source chaude). $W_{tot}=-Q_1-Q_2$ vient de $\Delta U_{cycle}=0=Q_1+Q_2+W_{tot}$. \\
+$\eta=\dfrac{Q_1+Q_2}{Q_1}=\boxed{1+\dfrac{Q_2}{Q_1}}$ \quad ($W_{tot}<0$ car machine motrice) &
+On simplifie la valeur absolue car $W_{tot}$ est négatif pour un cycle moteur. \\
+Comme $Q_2<0$ et $|Q_2|<|Q_1|$ : $0\leq\eta<1$ &
+$Q_2/Q_1$ est négatif mais de valeur absolue $<1$, donc $\eta$ reste entre 0 et 1 : jamais 100\%. \\
+Sur une isotherme, $\Delta U=0 \Rightarrow Q=-W=-nRT\ln\!\left(\dfrac{V_i}{V_f}\right)$ &
+Pour calculer $Q_1$ et $Q_2$ explicitement, on utilise le travail d'une isotherme (section 1) et le fait
+que $Q=-W$ quand $\Delta U=0$. \\
+$\eta=1+\dfrac{Q_{DA}}{Q_{BC}}=1-\dfrac{T_A\ln(V_A/V_D)}{T_C\ln(V_B/V_C)}$ &
+On applique la formule ci-dessus aux deux isothermes B-C (à $T_C$) et D-A (à $T_A$) ; les $Q_1,Q_2$
+deviennent des logarithmes de rapports de volumes. \\
+Relations adiabatiques : $T_AV_A^{\gamma-1}=T_BV_B^{\gamma-1}$ (A-B) et $T_CV_C^{\gamma-1}=T_DV_D^{\gamma-1}$
+(C-D), avec $T_B=T_C$ et $T_D=T_A$ &
+On utilise la 1\textsuperscript{ère} formule de l'adiabatique (section 2) sur les deux portions adiabatiques
+du cycle, en notant que B et C sont à la même température (idem D et A, isothermes). \\
+$\left(\dfrac{V_A}{V_B}\right)^{\gamma-1}=\dfrac{T_B}{T_A}=\dfrac{T_C}{T_D}=\left(\dfrac{V_D}{V_C}\right)^{\gamma-1}
+\Rightarrow \dfrac{V_A}{V_B}=\dfrac{V_D}{V_C} \Rightarrow \boxed{\dfrac{V_A}{V_D}=\dfrac{V_B}{V_C}}$ &
+En combinant les 4 relations, on montre que les deux rapports de volumes sont \textbf{égaux} -- c'est
+l'étape clé : cela va faire disparaître les logarithmes de volume dans le rendement ! \\
+Donc $\ln(V_A/V_D)=\ln(V_B/V_C)$, ces deux termes se simplifient dans la fraction &
+Puisque les rapports sont égaux, leurs logarithmes le sont aussi : la fraction $\frac{\ln(V_A/V_D)}{\ln(V_B/V_C)}$
+vaut exactement $1$. \\
+$\boxed{\eta_{Carnot}=1-\dfrac{T_A}{T_C}}$ &
+Il ne reste que le rapport des températures. Avec $T_A=T_2$ (froide) et $T_C=T_1$ (chaude), c'est la formule
+$\eta_{Carnot}=1-T_2/T_1$ du \textbf{formulaire}. \\
+\end{demotable}
+
+\begin{retenir}
+Même dans ce cas théorique \textbf{parfait} (aucune irréversibilité), le rendement n'est jamais égal à 1 :
+il ne dépend que du rapport des deux températures des sources. C'est la limite indépassable pour
+\textbf{tout} moteur thermique ditherme, quel que soit le fluide ou la technologie utilisée.
+\end{retenir}
+
+\newpage
+\section{Cycle de Joule (turbine à gaz) : démonstration et utilisation (diapos 109-116)}
+
+\subsection*{Le cycle fermé théorique (diapos 109-112)}
+
+\textbf{Les 4 transformations} (même schéma logique que Carnot, mais avec des \textbf{isobares} à la place
+des isothermes -- plus simple à réaliser techniquement, mais irréversibles) :
+\begin{itemize}[leftmargin=1.4em]
+\item A$\to$B : compression \textbf{adiabatique réversible} ($Q=0$, $W>0$)
+\item B$\to$C : détente \textbf{isobare irréversible} ($Q>0$, $W<0$) -- la source chaude $T_1$ fournit $Q_1$
+\item C$\to$D : détente \textbf{adiabatique réversible} ($Q=0$, $W<0$)
+\item D$\to$A : compression \textbf{isobare irréversible} ($Q<0$, $W>0$) -- la source froide $T_2$ reçoit
+$Q_2$
+\end{itemize}
+
+\begin{demotable}
+$\eta=1+\dfrac{Q_2}{Q_1}=1+\dfrac{Q_{DA}}{Q_{BC}}=1+\dfrac{nC_p(T_A-T_D)}{nC_p(T_C-T_B)}$ &
+Même point de départ que Carnot ($\eta=1+Q_2/Q_1$), mais ici les échanges de chaleur se font à
+\textbf{pression constante} : on utilise donc $Q=nC_p\Delta T$ au lieu de la formule isotherme. \\
+Relations adiabatiques (A-B et C-D) : $T_Ap_A^{(\gamma-1)/\gamma}=T_Bp_B^{(\gamma-1)/\gamma}$ et
+$T_Dp_D^{(\gamma-1)/\gamma}=T_Cp_C^{(\gamma-1)/\gamma}$, avec $p_A=p_D$ et $p_B=p_C$ (isobares) &
+On utilise la 3\textsuperscript{ème} formule de l'adiabatique ($T^\gamma p^{1-\gamma}=$cste) sur les deux
+portions adiabatiques ; les pressions se correspondent car B-C et D-A sont isobares. \\
+$\Rightarrow \dfrac{T_A}{T_D}=\dfrac{T_B}{T_C}=\dfrac{T_A-T_D}{T_B-T_C}=-\dfrac{T_A-T_D}{T_C-T_B}$ &
+En combinant les deux relations (même astuce que pour Carnot : deux rapports égaux $\Rightarrow$ leur
+différence donne le même rapport), on relie directement les 4 températures. \\
+$\boxed{\eta_J=1-\dfrac{T_A}{T_B}}$ &
+Les $(T_A-T_D)$ se simplifient avec ceux du rendement, il ne reste que $T_A$ et $T_B$. \\
+Comparaison à Carnot : $\eta_{Carnot}=1-\dfrac{T_A}{T_C}$, or $T_C>T_B$ &
+$T_C$ est la température atteinte après la détente isobare complète, $T_B$ seulement après la compression :
+$T_C>T_B$ toujours. \\
+$\boxed{\eta_{Carnot}>\eta_{Joule}}$ &
+Puisque $T_C>T_B$, diviser $T_A$ par $T_C$ donne un nombre plus petit que diviser $T_A$ par $T_B$ : le
+rendement de Joule est \textbf{plus bas} que celui de Carnot, car les isobares ne sont pas réversibles. \\
+\end{demotable}
+
+\subsection*{Utilisation : le cycle de Joule ouvert (groupe électrogène / turboréacteur, diapos 113-116)}
+
+\textbf{En pratique}, on ne referme pas le cycle : un compresseur axial (entraîné par la turbine, sur le
+même arbre) aspire de l'air frais en A, l'air ressort comprimé en B, est chauffé dans la chambre de
+combustion (injection de carburant, $Q_1$) jusqu'en C, puis se détend dans la turbine jusqu'en D en
+ressortant sous forme de gaz brûlés (remplacés par de l'air neuf en A au cycle suivant -- \textbf{cycle
+ouvert}). \textbf{Une grande partie du travail récupéré à la détente sert directement à entraîner le
+compresseur.}
+
+\begin{demotable}
+$\eta=\dfrac{-W_{ut}}{Q_1}=\dfrac{-(W_{CD}-W_{AB})}{Q_{BC}}$, avec $Q_{BC}=H_C-H_B=nC_p(T_C-T_B)$ &
+Ici les machines sont \textbf{ouvertes} (compresseur, turbine) : on utilise le rendement basé sur
+$W_{ut}$, et $Q_{BC}$ (isobare) se calcule avec l'enthalpie, comme pour tout échangeur ouvert. \\
+Machine ouverte adiabatique : $H_f-H_i=W_{ut}+Q$ et $Q=0 \Rightarrow W_{ut}=\Delta H$ &
+Résultat de la section 1 (machine ouverte) appliqué aux étapes adiabatiques A-B et C-D : pas de chaleur
+échangée, donc tout le travail utile = variation d'enthalpie. \\
+$W_{CD}=H_D-H_C$ et $W_{AB}=H_B-H_A$ &
+On applique ce résultat spécifiquement aux deux détentes/compressions adiabatiques du cycle. \\
+$\eta=\dfrac{-H_D+H_C-H_B+H_A}{H_C-H_B}$, et $\Delta H=nC_p\Delta T$ &
+On remplace $W_{CD}$ et $W_{AB}$ par leurs expressions en $H$, puis on repasse en températures. \\
+$\boxed{\eta=1+\dfrac{-T_D+T_A}{T_C-T_B}}$ &
+Même résultat que la version fermée (à une réécriture près) : la démonstration par les enthalpies confirme
+le résultat obtenu avec les températures. \\
+\end{demotable}
