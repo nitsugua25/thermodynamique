@@ -39,6 +39,25 @@ images/    79 fiches PNG 384x216 (taille exacte de l ecran), texte en
 images_jpeg/  Les memes 79 fiches en JPEG (qualite 95) pour un usage PC,
               impression ou insertion dans un document.
 
+synthese_png/   Captures d ecran DIRECTES de ta synthese manuscrite en
+synthese_jpg/   couleur (Synthese(1).pdf, 18 pages), decoupees en bandes
+                384x216 (S01a..S18d, 72 fiches). En plus de images/ (les
+                demos T01-T35 retapees) : meme contenu, deux presentations.
+                Nom = numero de page de ta synthese + sujet.
+
+exos_suppl_png/  Le document officiel "Exercices supplementaires" de la
+exos_suppl_jpg/  prof, capture directement (pas retape) : enonce, methode
+                 manuscrite, corrige officiel.
+                   ES01  cycle a 4 transformations (bonus, meme categorie
+                         que les exos d examen)
+                   ES02  moteur essence 4 temps 4 cylindres
+                   ES03  frigo NH3 (diagramme officiel + variante avec
+                         surchauffe/sous-refroidissement)
+                 L exercice 1 du document original (turbine a double
+                 detente) n est pas repris ici : il ne peut pas tomber en
+                 exercice a l examen (voir 1_revision/06-exos-type-examen.pdf).
+                 Explications pas a pas : voir 1_revision/07-ex-supplementaires.pdf
+
 guide-casio.pdf      Installation, quel script pour quelle question, et
                      8 exercices de test avec les resultats attendus
 fiches-planches.pdf  Les 79 fiches EXPLIQUEES (40 p.) : chaque fiche

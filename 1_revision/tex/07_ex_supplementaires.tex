@@ -1,0 +1,244 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\contentsname}{Table des matières}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.1cm}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{mdframed}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black}
+
+\definecolor{cbleu}{RGB}{25,80,180}
+\definecolor{cvert}{RGB}{20,120,55}
+\definecolor{cgris}{RGB}{95,95,95}
+\definecolor{crouge}{RGB}{170,40,40}
+
+\newmdenv[linecolor=cgris!60,backgroundcolor=cgris!5,linewidth=0.8pt,roundcorner=3pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{enonce}
+\newmdenv[linecolor=cvert,backgroundcolor=cvert!5,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{verif}
+\newmdenv[linecolor=cbleu,backgroundcolor=cbleu!5,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{info}
+\newmdenv[linecolor=crouge,backgroundcolor=crouge!5,linewidth=1pt,roundcorner=4pt,
+ innermargin=8pt,innertopmargin=6pt,innerbottommargin=6pt,skipabove=6pt,skipbelow=8pt]{etape}
+
+\newcommand{\eqb}[1]{\[\boxed{#1}\]}
+\newcommand{\fiche}[1]{\hfill{\small\color{cgris}[fiche #1]}}
+\newcommand{\fichein}[1]{{\small\color{cgris}[fiche #1]}}
+
+\title{\textbf{Exercices supplémentaires --- pas à pas}\\[3pt]
+\large Le document officiel de la prof, exercice par exercice}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-0.9cm}
+
+\begin{info}
+Ce document explique, étape par étape, les 3 exercices du fichier
+\textit{Exercices supplémentaires de thermodynamique} (celui avec le corrigé officiel).
+On se concentre sur les \textbf{2 types qui peuvent tomber en exercice à l'examen} :
+cycle/transformations et moteur essence. Le 3\textsuperscript{e} type officiel est un
+frigo NH$_3$ : il est traité aussi, ainsi qu'un exercice « bonus » sur les cycles trouvé
+dans les mêmes notes. L'exercice 1 du document officiel (turbine à double détente) n'est
+\textbf{pas} repris ici en détail : il ne peut pas tomber en exercice (voir
+\texttt{06-exos-type-examen.pdf}), seulement en théorie.
+
+\smallskip
+Les vignettes \textit{[fiche ESxx]} renvoient aux images dans \texttt{2\_casio/exos\_suppl\_png/}
+(petit format, calculatrice) et \texttt{2\_casio/exos\_suppl\_jpg/} (grand format, lisible
+sur PC/tel) --- ce sont des \textbf{copies d'écran du document original}, pas des textes
+retapés : utile pour voir exactement à quoi ressemble l'énoncé et le corrigé réels.
+\end{info}
+
+\tableofcontents
+\newpage
+
+%======================================================
+\section{Exercice bonus --- cycle à 4 transformations}
+\fiche{ES01a--e}
+
+\begin{enonce}
+\textbf{Énoncé.} 1~kg d'air ($M=28{,}9$~g/mol) est initialement à $p_A=2\cdot10^5$~Pa et
+$T_A=20\,^\circ$C. Il subit :
+\begin{itemize}[nosep,leftmargin=1.4em]
+\item A-B : adiabatique réversible jusqu'à 10~bar
+\item B-C : isotherme jusqu'à 1~bar
+\item C-D : isochore jusqu'à 2~bar
+\item D-A : isobare jusqu'au point initial
+\end{itemize}
+Tracer le diagramme $p$-$V$, trouver $p,T,V$ en chaque point, $Q$ et $W$ pour chaque
+transformation.
+\end{enonce}
+
+\subsection*{La démarche}
+\begin{etape}
+\textbf{Étape 1 --- passer en moles.} L'énoncé donne une masse en kg mais toutes les
+formules du cours ($C_v=20{,}785$, $C_p=29{,}099$ J/(mol$\cdot$K)) sont \textbf{molaires}.
+On calcule d'abord $n$ :
+\[ n=\frac{m}{M}=\frac{1000}{28{,}9}=34{,}6\text{ mol} \]
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 2 --- le point A est connu, on en déduit $V_A$ par $pV=nRT$.}
+\[ V_A=\frac{nRT_A}{p_A}=\frac{34{,}6\cdot8{,}314\cdot293{,}15}{2\cdot10^5}=0{,}425\text{ m}^3 \]
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 3 --- A$\to$B est adiabatique réversible : on utilise $pV^\gamma=$cste.}
+On connaît $p_A,V_A,p_B$ ($=10$~bar) donc :
+\[ V_B=V_A\left(\frac{p_A}{p_B}\right)^{1/\gamma},\qquad
+T_B=\frac{p_BV_B}{nR} \]
+Avec $\gamma=1{,}4$ (air) on trouve $V_B\approx0{,}134$~m$^3$ et $T_B\approx464$~K.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 4 --- B$\to$C est isotherme : $T_C=T_B$.} On connaît $p_C=1$~bar, donc
+$V_C=nRT_C/p_C\approx1{,}33$~m$^3$.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 5 --- C$\to$D est isochore : $V_D=V_C$.} On connaît $p_D=2$~bar, donc
+$T_D=p_DV_D/(nR)\approx926$~K.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 6 --- vérifier que D$\to$A referme bien le cycle} (isobare : $p_D=p_A=2$~bar,
+oui $\checkmark$).
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 7 --- $W$ et $Q$ de chaque tronçon}, avec les formules de la fiche
+\og transformations \fg{} :
+\[
+\begin{array}{ll}
+\text{A-B (adiab.)} & Q=0,\ W=n C_v\Delta T \\
+\text{B-C (isotherme)} & \Delta U=0,\ W=-nRT\ln(V_C/V_B),\ Q=-W \\
+\text{C-D (isochore)} & W=0,\ Q=nC_v\Delta T \\
+\text{D-A (isobare)} & W=-p\Delta V,\ Q=nC_p\Delta T
+\end{array}
+\]
+\end{etape}
+
+\begin{verif}
+\textbf{Vérification universelle du cycle} : $\sum W+\sum Q=0$ car $\Delta U_{cycle}=0$.
+Réponses officielles (\fichein{ES01e}) : $W_{tot}\approx124{,}4-306{,}5+0+181{,}8\approx0$~kJ,
+$Q_{tot}\approx0+306{,}5+338{,}9-671{,}9\approx-26{,}5$~kJ (léger écart dû aux
+arrondis de l'énoncé officiel --- c'est normal, la méthode est ce qui compte).
+\end{verif}
+
+\newpage
+%======================================================
+\section{Moteur essence 4 temps, 4 cylindres}
+\fiche{ES02a--f}
+
+\begin{enonce}
+\textbf{Énoncé.} Cylindrée totale 1,2~L (0,3~L/cylindre), $\varepsilon=10$, puissance
+effective $=-20$~kW, air aspiré à 16$\,^\circ$C, 1~bar, gaz parfait $\gamma=1{,}4$,
+21\% O$_2$. Carburant CH$_{1,8}$, excès d'air $\lambda=1{,}2$, PCI $=42\,500$~kJ/kg.
+Rendement méca $=0{,}8$, rendement de forme $=0{,}75$.
+\end{enonce}
+
+\subsection*{La démarche --- exactement le canevas moteur essence du cours}
+\begin{etape}
+\textbf{Étape 1 --- cylindrée par cylindre et volumes.}
+$V_{PMB}$ (point mort bas) $=0{,}3$~L $=3{,}333\cdot10^{-4}$~m$^3$ ; comme
+$\varepsilon=V_{PMB}/V_{PMH}=10$, $V_{PMH}=3{,}333\cdot10^{-5}$~m$^3$.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 2 --- point A (admission) : $T_A=289{,}15$~K, $p_A=10^5$~Pa,
+$V_A=V_{PMB}$.}
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 3 --- A$\to$B isotherme (admission), B$\to$C compression adiabatique
+réversible jusqu'à $V_{PMH}$}, puis C$\to$D explosion isochore, D$\to$E détente
+adiabatique réversible. On utilise $TV^{\gamma-1}=$cste et $pV^\gamma=$cste à chaque
+saut adiabatique, exactement comme pour le cycle bonus ci-dessus.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 4 --- la combustion (C$\to$D) fixe $T_D$} via le PCI et la masse de
+carburant brûlée par cycle (formule combustion CH$_{1,8}$ + excès d'air $\lambda=1{,}2$ :
+voir fiches combustion). C'est le calcul le plus long de l'exercice.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 5 --- $W$ et $Q$ de chaque tronçon}, rendement théorique $=|W_{tot}|/Q_{apportée}$,
+puis rendement réel $=\eta_{th}\cdot\eta_{méca}\cdot\eta_{forme}$.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 6 --- vitesse de rotation.} À partir de $P_e=-20$~kW, $\eta_{méca}$,
+$\eta_{forme}$ on remonte à $P_{th}$, puis $N$ (tr/min) avec le facteur 2 du 4~temps
+(un cycle complet $=2$ tours) et le nombre de cylindres.
+\end{etape}
+
+\begin{verif}
+\textbf{Résultats officiels} (\fichein{ES02f}) :
+\begin{center}
+\begin{tabular}{lrrr}
+\toprule
+ & $p$ (Pa) & $T$ (K) & $V$ (m$^3$) \\
+\midrule
+A & $1{,}000\text{E}{+}05$ & 289,15 & $3{,}333\text{E}{-}05$ \\
+B & $1{,}000\text{E}{+}05$ & 289,15 & $3{,}333\text{E}{-}04$ \\
+C & $2{,}512\text{E}{+}06$ & 726,31 & $3{,}333\text{E}{-}05$ \\
+D & $1{,}311\text{E}{+}07$ & 3791,31 & $3{,}333\text{E}{-}05$ \\
+E & $5{,}220\text{E}{+}05$ & 1509,35 & $3{,}333\text{E}{-}04$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Rendement théorique $=60{,}19\%$, vitesse $=1881$~tr/min.
+\end{verif}
+
+\newpage
+%======================================================
+\section{Machine frigo NH$_3$}
+\fiche{ES03a--e}
+
+\begin{enonce}
+\textbf{Énoncé officiel.} Cycle frigo au NH$_3$ : on lit le cycle sur le diagramme
+$\log p$-$h$ (points 1 à 4, \fichein{ES03b}) et on calcule la PSN.
+\end{enonce}
+
+\subsection*{La démarche}
+\begin{etape}
+\textbf{Étape 1 --- placer les 4 points sur le diagramme $\log p$-$h$}
+(isobare haute pression, isobare basse pression, isentropique pour la compression 1$\to$2,
+isenthalpique pour la détente 3$\to$4).
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 2 --- lire les enthalpies massiques} $h_1,h_2,h_3=h_4$ directement sur les
+axes du diagramme, au point où chaque tracé croise la courbe/l'isobare.
+\end{etape}
+
+\begin{etape}
+\textbf{Étape 3 --- calculer la PSN} (performance en froid, appelée aussi COP froid) :
+\eqb{\text{PSN}=\dfrac{h_1-h_4}{h_2-h_1}}
+\end{etape}
+
+\begin{verif}
+\textbf{Valeurs officielles} (\fichein{ES03e}) : $h_1\approx1760$~kJ/kg,
+$h_2\approx2050$~kJ/kg, $h_3=h_4\approx700$~kJ/kg (les valeurs varient légèrement
+selon la précision du tracé --- c'est normal et accepté à l'examen).
+\end{verif}
+
+\begin{info}
+\textbf{Variante avec surchauffe/sous-refroidissement} (\fichein{ES03c--d}) : même
+méthode, mais l'évaporation à $-10\,^\circ$C se prolonge de $5\,^\circ$C de surchauffe
+avant le point 1, et la condensation à $50\,^\circ$C se prolonge de $5\,^\circ$C de
+sous-refroidissement avant le point 4 --- cela déplace légèrement les points sur le
+diagramme. Avec ces données : $h_A\approx1460$, $h_B\approx2080$,
+$h_C=h_D\approx710$~kJ/kg, PSN $\approx3{,}3$.
+\end{info}
+
+\end{document}
