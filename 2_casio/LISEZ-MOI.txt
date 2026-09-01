@@ -43,15 +43,19 @@ synthese_png/   Captures d ecran DIRECTES de ta synthese manuscrite en
                 couleur (Synthese(1).pdf, 18 pages). En plus de images/ (les
                 demos T01-T35 retapees) : meme contenu, deux presentations.
                 Nom = numero de page de ta synthese + sujet.
-                  synthese_png/  decoupe en bandes 384x216 (S01a..S18d,
-                                 72 fiches) : la calculatrice a un ecran
-                                 fixe, ca demande plusieurs petites images
-                                 pour rester lisible.
+                  synthese_png/  decoupe en bandes 384x216 (S01a..S18h,
+                                 118 fiches), chaque bande recadree serree
+                                 sur son propre texte (pas juste la pleine
+                                 largeur de page) pour un zoom maximal :
+                                 la calculatrice a un ecran fixe, le texte
+                                 doit rester gros.
                   synthese_jpg/  UNE image par page (18 fichiers, longues,
                                  a faire defiler) : pas de decoupe puisque
                                  lues sur PC/tel, pas de limite d ecran.
                 La marge rose du cahier (ligne de reliure) est retiree des
-                deux formats.
+                deux formats. Une fois converti en .g3b (~13x plus petit
+                que le PNG), le dossier entier tient largement en dessous
+                de 9,6 Mo de stockage calculatrice.
 
 exos_suppl_png/  Le document officiel "Exercices supplementaires" de la
 exos_suppl_jpg/  prof, capture directement (pas retape) : enonce, methode

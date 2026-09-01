@@ -1,6 +1,6 @@
 # ECHANGE THERMIQUE (Casio)
-# mcdT, latente, melange
-# ENTREE vide = passer
+# mcdT, latente, melange, debit
+# LAISSER VIDE = passer
 
 def d(t):
     s = input(t)
@@ -8,49 +8,60 @@ def d(t):
         return None
     return float(s)
 
-def p(n, v):
-    print(n + "=" + str(round(v, 3)))
+def q(expl, tag):
+    print(expl)
+    return d(tag)
 
-print("ECH THERMIQUE")
-print("1 Q=mcdT")
-print("2 Q=mL")
-print("3 melange Tf")
-c = input("4 debit:")
+def p(n, v):
+    print(n + " = " + str(round(v, 3)))
+
+print("=== ECHANGE THERMIQUE ===")
+print("choisir le type de calcul :")
+print("1=Q=mcdT   2=Q=mL")
+print("3=melange  4=debit")
+c = input("1, 2, 3 ou 4 : ")
 
 if c == "1":
-    m = d("m kg=")
-    ce = d("c J/kgK=")
-    t1 = d("Ti C=")
-    t2 = d("Tf C=")
-    q = m * ce * (t2 - t1)
-    p("Q J", q)
-    p("Q kJ", q / 1000)
+    print("")
+    print("--- Q = m.c.dT ---")
+    m = q("masse m kg", "m= ")
+    ce = q("capacite c J/kgK", "c= ")
+    t1 = q("temperature initiale C", "Ti= ")
+    t2 = q("temperature finale C", "Tf= ")
+    qc = m * ce * (t2 - t1)
+    p("Q J", qc)
+    p("Q kJ", qc / 1000)
 
 elif c == "2":
-    m = d("m kg=")
-    l = d("L J/kg=")
-    q = m * l
-    p("Q J", q)
-    p("Q kJ", q / 1000)
+    print("")
+    print("--- Q = m.L (changement d etat) ---")
+    m = q("masse m kg", "m= ")
+    l = q("chaleur latente L J/kg", "L= ")
+    qc = m * l
+    p("Q J", qc)
+    p("Q kJ", qc / 1000)
 
 elif c == "3":
-    m1 = d("m1 kg=")
-    c1 = d("c1 J/kgK=")
-    t1 = d("T1 C=")
-    m2 = d("m2 kg=")
-    c2 = d("c2 J/kgK=")
-    t2 = d("T2 C=")
+    print("")
+    print("--- MELANGE : temperature finale ---")
+    m1 = q("masse 1 kg", "m1= ")
+    c1 = q("capacite 1 J/kgK", "c1= ")
+    t1 = q("temperature 1 C", "T1= ")
+    m2 = q("masse 2 kg", "m2= ")
+    c2 = q("capacite 2 J/kgK", "c2= ")
+    t2 = q("temperature 2 C", "T2= ")
     tf = (m1 * c1 * t1 + m2 * c2 * t2) / (m1 * c1 + m2 * c2)
     p("Tf C", tf)
     p("Q1 J", m1 * c1 * (tf - t1))
     p("Q2 J", m2 * c2 * (tf - t2))
 
 else:
-    print("P=mdot*c*dT")
-    pu = d("P kW=")
-    md = d("mdot kg/s=")
-    ce = d("c J/kgK=")
-    dt = d("dT C=")
+    print("")
+    print("--- CIRCUIT A DEBIT : P=mdot.c.dT ---")
+    pu = q("puissance P kW si connue", "P= ")
+    md = q("debit mdot kg/s si connu", "mdot= ")
+    ce = q("capacite c J/kgK", "c= ")
+    dt = q("ecart de temperature dT C", "dT= ")
     if pu is None:
         p("P kW", md * ce * dt / 1000)
     elif md is None:
@@ -59,4 +70,5 @@ else:
     else:
         p("dT C", pu * 1000 / (md * ce))
 
-print("FIN")
+print("")
+print("=== FIN ===")

@@ -1,7 +1,6 @@
 # TRANSFO GAZ PARFAIT (Casio)
-# systeme ferme
-# 1 transformation: p,V,T,W,Q
-# ENTREE vide = inconnu
+# systeme ferme, 1 transformation : p,V,T,W,Q
+# LAISSER VIDE = inconnu
 
 from math import log
 
@@ -13,19 +12,28 @@ def d(t):
         return None
     return float(s)
 
-def p(n, v):
-    print(n + "=" + str(round(v, 3)))
+def q(expl, tag):
+    print(expl)
+    return d(tag)
 
-print("TRANSFO GP")
-g = d("gamma=")
+def p(n, v):
+    print(n + " = " + str(round(v, 3)))
+
+print("=== TRANSFO GAZ PARFAIT ===")
+print("systeme ferme, 1 seule transfo")
+
+print("")
+print("--- GAZ ---")
+g = q("gamma (Cp/Cv)", "gamma= ")
 cv = R / (g - 1)
 cp = g * cv
 
-print("--etat 1--")
-p1 = d("p1 bar=")
-v1 = d("V1 L=")
-t1 = d("T1 C=")
-nn = d("n mol=")
+print("")
+print("--- ETAT 1 (vide=inconnu) ---")
+p1 = q("pression p1 bar", "p1= ")
+v1 = q("volume V1 L", "V1= ")
+t1 = q("temperature T1 C", "T1= ")
+nn = q("nombre de moles n si connu", "n= ")
 if p1 is not None:
     p1 = p1 * 100000
 if v1 is not None:
@@ -47,14 +55,17 @@ p("p1 bar", p1 / 100000)
 p("V1 L", v1 * 1000)
 p("T1 K", t1)
 
-print("--type--")
-print("1isob 2isoc")
-ty = input("3isoT 4adia:")
+print("")
+print("--- TYPE DE TRANSFORMATION ---")
+print("1=isobare 2=isochore")
+print("3=isotherme 4=adiabatique")
+ty = input("1, 2, 3 ou 4 : ")
 
-print("--etat 2--")
-p2 = d("p2 bar=")
-v2 = d("V2 L=")
-t2 = d("T2 C=")
+print("")
+print("--- ETAT 2 (vide=inconnu) ---")
+p2 = q("pression p2 bar", "p2= ")
+v2 = q("volume V2 L", "V2= ")
+t2 = q("temperature T2 C", "T2= ")
 if p2 is not None:
     p2 = p2 * 100000
 if v2 is not None:
@@ -95,23 +106,26 @@ p("p2 bar", p2 / 100000)
 p("V2 L", v2 * 1000)
 p("T2 K", t2)
 
-print("--energies--")
+print("")
+print("--- TRAVAIL ET CHALEUR ---")
 du = nn * cv * (t2 - t1)
 dh = nn * cp * (t2 - t1)
 if ty == "1":
     w = -p1 * (v2 - v1)
-    q = dh
+    qc = dh
 elif ty == "2":
     w = 0.0
-    q = du
+    qc = du
 elif ty == "3":
     w = -nn * R * t1 * log(v2 / v1)
-    q = -w
+    qc = -w
 else:
-    q = 0.0
+    qc = 0.0
     w = du
 p("W J", w)
-p("Q J", q)
+p("Q J", qc)
 p("dU J", du)
 p("dH J", dh)
-print("FIN")
+
+print("")
+print("=== FIN ===")
