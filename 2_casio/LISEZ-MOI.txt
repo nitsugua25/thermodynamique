@@ -40,14 +40,24 @@ images_jpeg/  Les memes 79 fiches en JPEG (qualite 95) pour un usage PC,
               impression ou insertion dans un document.
 
 synthese_png/   Captures d ecran DIRECTES de ta synthese manuscrite en
-synthese_jpg/   couleur (Synthese(1).pdf, 18 pages), decoupees en bandes
-                384x216 (S01a..S18d, 72 fiches). En plus de images/ (les
+                couleur (Synthese(1).pdf, 18 pages). En plus de images/ (les
                 demos T01-T35 retapees) : meme contenu, deux presentations.
                 Nom = numero de page de ta synthese + sujet.
+                  synthese_png/  decoupe en bandes 384x216 (S01a..S18d,
+                                 72 fiches) : la calculatrice a un ecran
+                                 fixe, ca demande plusieurs petites images
+                                 pour rester lisible.
+                  synthese_jpg/  UNE image par page (18 fichiers, longues,
+                                 a faire defiler) : pas de decoupe puisque
+                                 lues sur PC/tel, pas de limite d ecran.
+                La marge rose du cahier (ligne de reliure) est retiree des
+                deux formats.
 
 exos_suppl_png/  Le document officiel "Exercices supplementaires" de la
 exos_suppl_jpg/  prof, capture directement (pas retape) : enonce, methode
-                 manuscrite, corrige officiel.
+                 manuscrite, corrige officiel. Meme principe que ci-dessus :
+                 exos_suppl_png/ decoupe pour la calculatrice, exos_suppl_jpg/
+                 une image par page pour PC/tel.
                    ES01  cycle a 4 transformations (bonus, meme categorie
                          que les exos d examen)
                    ES02  moteur essence 4 temps 4 cylindres

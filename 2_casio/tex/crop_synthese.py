@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 # Regenere synthese_png/ (dense, pour l'ecran 384x216 fixe de la calculatrice)
-# et synthese_jpg/ (plus large, moins de fiches -- suffisant pour PC/tel).
+# et synthese_jpg/ (UNE longue image par page/chapitre, pour PC/tel : on la
+# fait defiler, pas besoin de la decouper).
 # Source : Synthese(1).pdf (0_sources/) rendu en PNG 300dpi au prealable :
 #   pdftoppm -png -r 300 "0_sources/Synthese(1).pdf" <SCRATCH>/p
+#
+# Les deux formats detectent et retirent la marge rouge/rose du cahier
+# (ligne verticale de reliure) pour gagner de la place utile.
 import os
 from PIL import Image, ImageFilter
 import numpy as np
@@ -19,26 +23,40 @@ SLUGS = {
     15: "moteur-essence", 16: "moteur-2temps-a", 17: "moteur-2temps-b", 18: "frigo-pac",
 }
 
-def content_bbox(im, thresh=245, pad=15):
-    g = np.array(im.convert("L"))
+def find_margin_x(im, xmin=250, xmax=950, ymin=400, ymax=3000, frac=0.6):
+    """Detecte la ligne verticale rose/rouge de marge du cahier (photo scannee)."""
+    arr = np.array(im.convert("RGB")).astype(int)
+    ymax = min(ymax, arr.shape[0])
+    sub = arr[ymin:ymax, xmin:xmax, :]
+    r, g, b = sub[:, :, 0], sub[:, :, 1], sub[:, :, 2]
+    mask = (r > g + 5) & (b > g + 3) & (r > 180) & (g < 245)
+    colsum = mask.sum(axis=0)
+    x = int(np.argmax(colsum)) + xmin
+    if colsum.max() < frac * (ymax - ymin):
+        return None  # pas de ligne fiable trouvee (ex: page tapee a la machine)
+    return x
+
+def content_bbox_from(im, x_start, thresh=245, pad=15):
+    g = np.array(im.convert("L"))[:, x_start:]
     mask = g < thresh
     rows = np.any(mask, axis=1)
     cols = np.any(mask, axis=0)
     if not rows.any():
-        return (0, 0, im.width, im.height)
+        return (x_start, 0, im.width, im.height)
     y0, y1 = np.where(rows)[0][[0, -1]]
     x0, x1 = np.where(cols)[0][[0, -1]]
-    y0 = max(0, y0 - pad); x0 = max(0, x0 - pad)
-    y1 = min(im.height, y1 + pad); x1 = min(im.width, x1 + pad)
+    y0 = max(0, y0 - pad); y1 = min(im.height, y1 + pad)
+    x0 = max(x_start, x_start + x0 - pad)
+    x1 = min(im.width, x_start + x1 + pad)
     return (int(x0), int(y0), int(x1), int(y1))
 
-# IMPORTANT : PNG et JPEG sont decouples expres. Le PNG doit tenir sur l'ecran
-# 384x216 (fixe, imposé par la calculatrice) donc il lui faut plus de fiches,
-# plus petites, pour que le texte reste lisible. Le JPEG (lu sur PC/tel) n'a
-# pas cette contrainte : baisser sa densite de decoupe le multiplie pour rien.
-PNG_DENSITY = 0.68  # plus petit -> plus de fiches, plus petites (texte plus gros)
-JPG_DENSITY = 1.0   # une fiche = une pleine "tranche" 16:9 de la page
-OVERLAP = 0.06      # recouvrement entre fiches voisines pour ne rien couper au bord
+def get_trimmed_bbox(im):
+    mx = find_margin_x(im)
+    x_start = (mx + 12) if mx is not None else 0
+    return content_bbox_from(im, x_start)
+
+PNG_DENSITY = 0.68  # ecran calculatrice fixe (384x216) -> il faut des fiches petites/nombreuses
+OVERLAP = 0.06       # recouvrement entre fiches voisines pour ne rien couper au bord
 
 def strip_bounds(y0, y1, cw, density):
     ch = y1 - y0
@@ -56,7 +74,7 @@ def strip_bounds(y0, y1, cw, density):
 def process_page(pnum):
     slug = SLUGS[pnum]
     im = Image.open(f"{SCRATCH}/p-{pnum:02d}.png").convert("RGB")
-    x0, y0, x1, y1 = content_bbox(im)
+    x0, y0, x1, y1 = get_trimmed_bbox(im)
     cw = x1 - x0
     letters = "abcdefghij"
 
@@ -66,13 +84,12 @@ def process_page(pnum):
         mini = mini.filter(ImageFilter.UnsharpMask(radius=1.2, percent=130, threshold=2))
         mini.save(f"{OUT_PNG}/S{pnum:02d}{letters[i]}-{slug}.png")
 
-    for i, (sy0, sy1) in enumerate(strip_bounds(y0, y1, cw, JPG_DENSITY)):
-        crop = im.crop((x0, sy0, x1, sy1))
-        big_w = 1400
-        big_h = int(big_w * (sy1 - sy0) / cw)
-        big = crop.resize((big_w, big_h), Image.LANCZOS)
-        big = big.filter(ImageFilter.UnsharpMask(radius=1.0, percent=110, threshold=2))
-        big.save(f"{OUT_JPG}/S{pnum:02d}{letters[i]}-{slug}.jpg", quality=90)
+    crop = im.crop((x0, y0, x1, y1))
+    big_w = 1400
+    big_h = int(big_w * crop.height / crop.width)
+    big = crop.resize((big_w, big_h), Image.LANCZOS)
+    big = big.filter(ImageFilter.UnsharpMask(radius=1.0, percent=110, threshold=2))
+    big.save(f"{OUT_JPG}/S{pnum:02d}-{slug}.jpg", quality=90)
 
 if __name__ == "__main__":
     for p in range(1, 19):
